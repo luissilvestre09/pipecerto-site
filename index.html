@@ -61,7 +61,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Ubuntu',system-ui,sans-serif;background:var(--branco);color:var(--texto);line-height:1.65;font-size:17px}
-a{color:var(--verde)}
+a{color:var(--verde-escuro)}
 .container{max-width:1040px;margin:0 auto;padding:0 24px}
 
 /* Header */
@@ -69,21 +69,31 @@ header{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:bl
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--texto)}
 .logo span{font-size:20px;font-weight:700;letter-spacing:-.3px}
-.btn{display:inline-block;font-family:'Ubuntu',sans-serif;font-weight:700;font-size:15.5px;color:#fff !important;background:var(--verde);border:none;border-radius:10px;padding:13px 24px;text-decoration:none;cursor:pointer;transition:background .15s}
-.btn:hover{background:var(--verde-escuro)}
+.btn{display:inline-block;font-family:'Ubuntu',sans-serif;font-weight:700;font-size:15.5px;color:#fff !important;background:var(--verde-escuro);border:none;border-radius:10px;padding:13px 24px;text-decoration:none;cursor:pointer;transition:background .15s}
+.btn:hover{background:#115A3A}
 .btn-sec{display:inline-block;font-weight:500;font-size:15.5px;color:var(--suave) !important;text-decoration:none}
 .btn-sec:hover{color:var(--texto) !important}
 
 /* Hero */
-.hero{padding:110px 0 96px;text-align:center}
-.kicker{display:block;font-size:14px;font-weight:500;color:var(--suave);margin-bottom:22px}
-.hero h1{font-size:clamp(34px,6vw,60px);font-weight:700;line-height:1.08;letter-spacing:-1.5px;max-width:860px;margin:0 auto}
-.hero .dores{font-size:clamp(15.5px,1.9vw,17.5px);color:var(--suave);margin:24px auto 0;max-width:640px}
-.hero .dores b{color:var(--texto);font-weight:700}
-.hero p.sub{font-size:clamp(17px,2.2vw,20px);color:var(--suave);max-width:660px;margin:18px auto 38px}
-.hero-ctas{display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap}
-.micro{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px;font-size:14px;color:var(--suave)}
+.hero{padding:72px 0 88px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.kicker{display:block;font-size:13.5px;font-weight:700;letter-spacing:1.5px;color:var(--verde-escuro);margin-bottom:18px;text-transform:uppercase}
+.hero h1{font-size:clamp(32px,4.6vw,52px);font-weight:700;line-height:1.1;letter-spacing:-1.2px}
+.hero p.sub{font-size:clamp(16.5px,1.9vw,18.5px);color:var(--suave);margin:20px 0 30px;max-width:520px}
+.hero-ctas{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.micro{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px;font-size:14px;color:var(--suave)}
 .micro .sep{color:var(--linha)}
+.amostra{background:#F2F7F4;border:1px solid #DCE9E1;border-radius:14px;padding:26px}
+.amostra .atitulo{font-size:13px;font-weight:700;letter-spacing:1.5px;color:var(--verde-escuro);text-transform:uppercase}
+.amostra .anota{font-size:12.5px;color:var(--suave);margin:4px 0 18px}
+.amostra ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px}
+.amostra li{display:flex;gap:11px;align-items:flex-start}
+.amostra li::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--verde-escuro);margin-top:7px}
+.amostra b{display:block;font-size:15.5px;color:var(--texto)}
+.amostra span{font-size:13.5px;color:var(--suave)}
+nav.anchors{display:flex;gap:22px;font-size:14.5px}
+nav.anchors a{color:var(--suave);text-decoration:none}
+nav.anchors a:hover{color:var(--texto)}
 
 /* Seções */
 .section{padding:104px 0}
@@ -156,12 +166,16 @@ footer{padding:40px 0}
 .footer-inner p{font-size:14px;color:var(--suave)}
 
 /* Botão flutuante */
-.fab-diag{position:fixed;right:20px;bottom:20px;z-index:90;display:flex;align-items:center;gap:9px;background:var(--verde);color:#fff !important;font-weight:700;font-size:15px;text-decoration:none;border-radius:999px;padding:13px 20px;box-shadow:0 6px 24px rgba(33,29,25,.26);transition:transform .15s}
+.fab-diag{position:fixed;right:20px;bottom:20px;z-index:90;display:flex;align-items:center;gap:9px;background:var(--verde-escuro);color:#fff !important;font-weight:700;font-size:15px;text-decoration:none;border-radius:999px;padding:13px 20px;box-shadow:0 6px 24px rgba(33,29,25,.26);transition:transform .15s}
 .fab-diag:hover{transform:scale(1.04)}
 .fab-diag svg{flex:none}
 
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  nav.anchors{display:none}
+}
 @media (max-width:640px){
-  .hero{padding:72px 0 64px}
+  .hero{padding:56px 0 56px}
   .section{padding:72px 0}
   .section p.lead{margin-bottom:44px}
   .jornada{padding:64px 0}
@@ -186,6 +200,10 @@ footer{padding:40px 0}
       </svg>
       <span>PipeCerto</span>
     </a>
+    <nav class="anchors" aria-label="Seções">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#perguntas">Perguntas</a>
+    </nav>
     <a class="btn" href="https://diagnostico.pipecerto.com.br">Diagnóstico gratuito</a>
   </div>
 </header>
@@ -194,34 +212,27 @@ footer{padding:40px 0}
 
   <section class="hero">
     <div class="container">
-      <span class="kicker">Para indústrias que vendem sob encomenda</span>
-      <h1>Sua indústria não perde venda por falta de cliente interessado. Perde depois que ele chega.</h1>
-      <p class="dores">Orçamentos presos no WhatsApp. Propostas que esfriam sem follow-up. CRM que ninguém usa. <b>Se doeu, é da sua empresa que estamos falando.</b></p>
-      <p class="sub">Instalamos e operamos o sistema comercial da sua indústria: resposta rápida, o cliente certo na frente da fila e acompanhamento até a decisão. Nenhum orçamento morre sem resposta.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="https://diagnostico.pipecerto.com.br">Receber diagnóstico gratuito</a>
-        <a class="btn-sec" href="#como-funciona">Como funciona</a>
-      </div>
-      <p class="micro">Cliente oculto no seu atendimento <span class="sep">·</span> Relatório em 5 dias úteis <span class="sep">·</span> Sem compromisso</p>
-    </div>
-  </section>
-
-  <section class="jornada" aria-label="A jornada do cliente">
-    <div class="container jornada-inner">
-      <h2>Todo cliente chega frio.<br>Nós o levamos até o verde.</h2>
-      <div class="etapas" aria-hidden="true">
-        <div class="etapa frio"><span class="dot"></span><span class="etapa-nome">FRIO</span></div>
-        <span class="etapa seta">→</span>
-        <div class="etapa morno"><span class="dot"></span><span class="etapa-nome">MORNO</span></div>
-        <span class="etapa seta">→</span>
-        <div class="etapa quente"><span class="dot"></span><span class="etapa-nome">QUENTE</span></div>
-        <span class="etapa seta">→</span>
-        <div class="etapa cliente">
-          <span class="dot">
-            <svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><polyline points="10 21 17 28 30 12" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>
-          </span>
-          <span class="etapa-nome">CLIENTE</span>
+      <div class="hero-grid">
+        <div>
+          <span class="kicker">Para indústrias que vendem sob encomenda</span>
+          <h1>Transforme mais orçamentos em pedidos.</h1>
+          <p class="sub">Organizamos o atendimento e acompanhamos cada proposta até a decisão: implantamos o processo e o CRM e operamos a rotina comercial com a sua equipe. Cada orçamento com dono, próximo passo e prazo.</p>
+          <div class="hero-ctas">
+            <a class="btn" href="https://diagnostico.pipecerto.com.br">Quero analisar meu atendimento</a>
+            <a class="btn-sec" href="#como-funciona">Como funciona</a>
+          </div>
+          <p class="micro">Gratuito <span class="sep">·</span> Cliente oculto <span class="sep">·</span> Relatório em até 5 dias úteis</p>
         </div>
+        <aside class="amostra" aria-label="Amostra do relatório de diagnóstico">
+          <p class="atitulo">Relatório do atendimento</p>
+          <p class="anota">Modelo ilustrativo do diagnóstico</p>
+          <ul>
+            <li><div><b>Primeira resposta</b><span>Tempo e qualidade da condução</span></div></li>
+            <li><div><b>Entendimento do pedido</b><span>Perguntas feitas e próximos passos</span></div></li>
+            <li><div><b>Acompanhamento</b><span>Retomada da proposta na janela avaliada</span></div></li>
+            <li><div><b>Prioridades</b><span>O que corrigir primeiro e por quê</span></div></li>
+          </ul>
+        </aside>
       </div>
     </div>
   </section>
@@ -285,7 +296,25 @@ footer{padding:40px 0}
     </div>
   </section>
 
-  <hr class="hairline">
+  <section class="jornada" aria-label="A jornada do cliente">
+    <div class="container jornada-inner">
+      <h2>Todo cliente chega frio.<br>Nós o levamos até o verde.</h2>
+      <div class="etapas" aria-hidden="true">
+        <div class="etapa frio"><span class="dot"></span><span class="etapa-nome">FRIO</span></div>
+        <span class="etapa seta">→</span>
+        <div class="etapa morno"><span class="dot"></span><span class="etapa-nome">MORNO</span></div>
+        <span class="etapa seta">→</span>
+        <div class="etapa quente"><span class="dot"></span><span class="etapa-nome">QUENTE</span></div>
+        <span class="etapa seta">→</span>
+        <div class="etapa cliente">
+          <span class="dot">
+            <svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><polyline points="10 21 17 28 30 12" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>
+          </span>
+          <span class="etapa-nome">CLIENTE</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section" id="para-quem">
     <div class="container">
