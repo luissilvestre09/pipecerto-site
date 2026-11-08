@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PipeCerto — Sistema comercial para indústrias que vendem sob encomenda</title>
+<meta name="description" content="Instalamos e operamos o sistema comercial da sua indústria: leads qualificados, CRM organizado e a atividade do dia de cada vendedor escrita pela IA. Nenhum orçamento morre sem resposta.">
+<link rel="canonical" href="https://pipecerto.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="PipeCerto">
+<meta property="og:title" content="PipeCerto — Sistema comercial para indústrias que vendem sob encomenda">
+<meta property="og:description" content="Nenhum orçamento morre sem resposta. Instalamos e operamos o sistema comercial da sua indústria: leads qualificados, CRM organizado e follow-up que não esfria.">
+<meta property="og:url" content="https://pipecerto.com.br/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://pipecerto.com.br/#organizacao",
+  "name": "PipeCerto",
+  "url": "https://pipecerto.com.br/",
+  "email": "contato@pipecerto.com.br",
+  "description": "Consultoria e operação de sistemas comerciais para indústrias que vendem sob encomenda: diagnóstico do atendimento, implantação de CRM e processo de vendas, e operação mensal com inteligência artificial.",
+  "areaServed": {"@type": "Country", "name": "Brasil"},
+  "knowsAbout": ["gestão comercial para indústria", "implantação de CRM", "follow-up de orçamentos", "qualificação de leads B2B"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231E8E5A'/%3E%3Cpolyline points='18 33 28 43 46 21' fill='none' stroke='%23FFFFFF' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --carvao:#211D19;
+  --marfim:#FBF7F1;
+  --branco:#FFFFFF;
+  --quente:#C2321D;
+  --quente-escuro:#9E2817;
+  --morno:#D97706;
+  --frio:#3A6B9E;
+  --cliente:#1E8E5A;
+  --texto:#211D19;
+  --texto-suave:#5A5247;
+  --borda:#EDE5D8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Ubuntu',system-ui,sans-serif;background:var(--marfim);color:var(--texto);line-height:1.6}
+a{color:var(--quente)}
+a:hover{color:var(--quente-escuro)}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{position:sticky;top:0;background:rgba(251,247,241,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--borda);z-index:50}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--texto)}
+.logo span{font-size:21px;font-weight:700;letter-spacing:-.3px}
+.btn{display:inline-block;font-family:'Ubuntu',sans-serif;font-weight:700;font-size:15px;color:#fff !important;background:var(--quente);border:none;border-radius:8px;padding:12px 22px;text-decoration:none;cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--quente-escuro)}
+.btn-sec{display:inline-block;font-weight:700;font-size:15px;color:var(--texto) !important;text-decoration:none}
+.btn-sec:hover{color:var(--quente) !important}
+
+/* Hero */
+.hero{padding:72px 0 56px}
+.kicker{display:block;font-size:13px;font-weight:700;letter-spacing:2.5px;color:var(--quente);margin-bottom:14px}
+.hero h1{font-size:clamp(32px,5.5vw,52px);font-weight:700;line-height:1.12;letter-spacing:-1px;max-width:760px}
+.hero p.sub{font-size:clamp(16px,2.2vw,19px);color:var(--texto-suave);max-width:640px;margin:20px 0 28px}
+.hero-ctas{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+
+/* Jornada strip */
+.jornada{background:var(--carvao);color:var(--marfim);padding:52px 0}
+.jornada-inner{display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:space-between}
+.jornada h2{font-size:clamp(22px,3vw,28px);font-weight:700;line-height:1.25;max-width:420px}
+.jornada .etapas{display:flex;align-items:flex-end;gap:26px;flex-wrap:wrap}
+.etapa{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:1.5px}
+.etapa .dot{border-radius:50%}
+.etapa.frio .dot{width:22px;height:22px;background:var(--frio)}
+.etapa.morno .dot{width:30px;height:30px;background:var(--morno)}
+.etapa.quente .dot{width:40px;height:40px;background:var(--quente)}
+.etapa.cliente .dot{width:54px;height:54px;background:var(--cliente);display:flex;align-items:center;justify-content:center}
+.etapa .seta{color:#6B6358;font-size:20px;padding-bottom:18px}
+.etapa-nome{color:#B0A596}
+
+/* Furos */
+.section{padding:72px 0}
+.section h2{font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-.5px;line-height:1.2;margin-bottom:12px}
+.section p.lead{font-size:17px;color:var(--texto-suave);max-width:680px;margin-bottom:36px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--branco);border:1px solid var(--borda);border-radius:12px;padding:26px}
+.card .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:var(--carvao);color:var(--marfim);font-weight:700;font-size:16px;margin-bottom:14px}
+.card h3{font-size:19px;font-weight:700;margin-bottom:8px}
+.card p{font-size:15px;color:var(--texto-suave)}
+.card .custo{display:block;margin-top:14px;font-size:13.5px;font-weight:700;color:var(--quente)}
+
+/* Como funciona */
+.como{background:var(--branco);border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)}
+.passos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.passo{border:1px solid var(--borda);border-radius:12px;padding:26px;background:var(--marfim)}
+.passo .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;padding:6px 12px;border-radius:999px;margin-bottom:14px}
+.passo.p1 .tag{background:#E8EFF6;color:var(--frio)}
+.passo.p2 .tag{background:#FBEEE0;color:var(--morno)}
+.passo.p3 .tag{background:#E6F2EC;color:var(--cliente)}
+.passo h3{font-size:19px;font-weight:700;margin-bottom:8px}
+.passo p{font-size:15px;color:var(--texto-suave)}
+.passo .detalhe{margin-top:12px;font-size:13.5px;color:var(--texto-suave)}
+.passo .detalhe strong{color:var(--texto)}
+
+/* Para quem */
+.perfil{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.perfil .item{display:flex;gap:12px;align-items:flex-start;background:var(--branco);border:1px solid var(--borda);border-radius:10px;padding:18px}
+.perfil .check{flex-shrink:0;width:24px;height:24px;border-radius:6px;background:var(--cliente);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.perfil p{font-size:15px}
+
+/* Diferenciais */
+.dif{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.dif .item{border-left:3px solid var(--quente);padding:4px 0 4px 18px}
+.dif h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.dif p{font-size:14.5px;color:var(--texto-suave)}
+
+/* CTA final */
+.cta-final{background:var(--carvao);color:var(--marfim);text-align:center;padding:72px 0}
+.cta-final h2{font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-.5px;margin-bottom:12px}
+.cta-final p{font-size:17px;color:#B0A596;max-width:560px;margin:0 auto 28px}
+
+/* Footer */
+footer{padding:36px 0;border-top:1px solid var(--borda)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-inner p{font-size:13.5px;color:var(--texto-suave)}
+
+@media (max-width:640px){
+  .hero{padding:48px 0 40px}
+  .section{padding:52px 0}
+  .jornada .etapas{gap:16px}
+  .etapa .seta{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a class="logo" href="#topo" aria-label="PipeCerto — início">
+      <svg width="54" height="26" viewBox="0 0 160 60" role="img" aria-label="Símbolo PipeCerto: jornada do lead, do frio ao cliente">
+        <circle cx="12" cy="46" r="6" fill="#3A6B9E"></circle>
+        <circle cx="42" cy="40" r="8" fill="#D97706"></circle>
+        <circle cx="78" cy="32" r="11" fill="#C2321D"></circle>
+        <circle cx="126" cy="22" r="16" fill="#1E8E5A"></circle>
+        <polyline points="117 22 124 29 136 15" fill="none" stroke="#FBF7F1" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+      </svg>
+      <span>PipeCerto</span>
+    </a>
+    <a class="btn" href="https://diagnostico.pipecerto.com.br">Diagnóstico gratuito</a>
+  </div>
+</header>
+
+<main id="topo">
+
+  <section class="hero">
+    <div class="container">
+      <span class="kicker">PARA INDÚSTRIAS QUE VENDEM SOB ENCOMENDA</span>
+      <h1>Nenhum orçamento morre sem resposta.</h1>
+      <p class="sub">Instalamos e operamos o sistema comercial da sua indústria: leads qualificados, CRM organizado e a atividade do dia de cada vendedor escrita pela inteligência artificial.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="https://diagnostico.pipecerto.com.br">Receber diagnóstico gratuito</a>
+        <a class="btn-sec" href="#como-funciona">Como funciona →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="jornada" aria-label="A jornada do lead">
+    <div class="container jornada-inner">
+      <h2>Seu lead chega frio.<br>Nós o levamos até o verde.</h2>
+      <div class="etapas" aria-hidden="true">
+        <div class="etapa frio"><span class="dot"></span><span class="etapa-nome">FRIO</span></div>
+        <span class="etapa seta">→</span>
+        <div class="etapa morno"><span class="dot"></span><span class="etapa-nome">MORNO</span></div>
+        <span class="etapa seta">→</span>
+        <div class="etapa quente"><span class="dot"></span><span class="etapa-nome">QUENTE</span></div>
+        <span class="etapa seta">→</span>
+        <div class="etapa cliente">
+          <span class="dot">
+            <svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><polyline points="10 21 17 28 30 12" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>
+          </span>
+          <span class="etapa-nome">CLIENTE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="furos">
+    <div class="container">
+      <h2>Os três furos que drenam as vendas da indústria</h2>
+      <p class="lead">Quem investe para gerar o lead e falha no atendimento paga duas vezes. São quase sempre os mesmos três pontos:</p>
+      <div class="cards">
+        <div class="card">
+          <span class="num">1</span>
+          <h3>Demora na primeira resposta</h3>
+          <p>O lead pede orçamento em três concorrentes. Fecha com quem responde primeiro — e horas de silêncio entregam a venda para o outro.</p>
+          <span class="custo">Custo: a venda vai para quem respondeu antes.</span>
+        </div>
+        <div class="card">
+          <span class="num">2</span>
+          <h3>Lead sem qualificação</h3>
+          <p>O vendedor atende todo mundo igual: o curioso e o comprador com pedido na mão recebem a mesma atenção, na mesma fila.</p>
+          <span class="custo">Custo: energia no lead errado, pressa no lead certo.</span>
+        </div>
+        <div class="card">
+          <span class="num">3</span>
+          <h3>Proposta sem follow-up</h3>
+          <p>O orçamento é enviado e a conversa esfria. Ninguém retoma no momento certo — e "vou analisar" vira silêncio definitivo.</p>
+          <span class="custo">Custo: propostas boas morrendo na gaveta do cliente.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section como" id="como-funciona">
+    <div class="container">
+      <h2>Como funciona</h2>
+      <p class="lead">Três passos, sem projeto interminável: em semanas o sistema está operando — e segue operado todos os dias.</p>
+      <div class="passos">
+        <div class="passo p1">
+          <span class="tag">PASSO 1 · GRATUITO</span>
+          <h3>Diagnóstico</h3>
+          <p>Testamos o atendimento comercial da sua empresa como se fôssemos um cliente e entregamos um relatório objetivo: nota, furos encontrados e o que eles custam por mês.</p>
+          <p class="detalhe"><strong>Prazo:</strong> 5 dias úteis · sem compromisso</p>
+        </div>
+        <div class="passo p2">
+          <span class="tag">PASSO 2</span>
+          <h3>Implantação</h3>
+          <p>Desenhamos o processo de vendas, configuramos o CRM, criamos a qualificação inteligente de leads e a régua de follow-up, e treinamos a equipe.</p>
+          <p class="detalhe"><strong>Prazo:</strong> 30 a 45 dias</p>
+        </div>
+        <div class="passo p3">
+          <span class="tag">PASSO 3 · CONTÍNUO</span>
+          <h3>Operação</h3>
+          <p>A inteligência artificial analisa cada lead que entra, escreve a atividade do dia de cada vendedor e monitora negócios esfriando. O dono recebe relatório semanal.</p>
+          <p class="detalhe"><strong>Formato:</strong> mensalidade · reunião mensal de 30 min</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="para-quem">
+    <div class="container">
+      <h2>Feito para a indústria que vende por orçamento</h2>
+      <p class="lead">Se a sua venda começa com um pedido de orçamento e passa por WhatsApp, proposta e negociação, o sistema foi desenhado para você.</p>
+      <div class="perfil">
+        <div class="item">
+          <span class="check"><svg width="14" height="14" viewBox="0 0 40 40" aria-hidden="true"><polyline points="8 21 16 29 32 11" fill="none" stroke="#FFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></polyline></svg></span>
+          <p>Estruturas metálicas, esquadrias e serralheria industrial</p>
+        </div>
+        <div class="item">
+          <span class="check"><svg width="14" height="14" viewBox="0 0 40 40" aria-hidden="true"><polyline points="8 21 16 29 32 11" fill="none" stroke="#FFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></polyline></svg></span>
+          <p>Uniformes profissionais e confecção sob encomenda</p>
+        </div>
+        <div class="item">
+          <span class="check"><svg width="14" height="14" viewBox="0 0 40 40" aria-hidden="true"><polyline points="8 21 16 29 32 11" fill="none" stroke="#FFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></polyline></svg></span>
+          <p>Embalagens personalizadas e material promocional</p>
+        </div>
+        <div class="item">
+          <span class="check"><svg width="14" height="14" viewBox="0 0 40 40" aria-hidden="true"><polyline points="8 21 16 29 32 11" fill="none" stroke="#FFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></polyline></svg></span>
+          <p>Móveis corporativos, comunicação visual e equipamentos sob medida</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section como" id="diferenciais">
+    <div class="container">
+      <h2>Por que a PipeCerto</h2>
+      <p class="lead">Não somos agência nem revenda de software. Somos operação comercial.</p>
+      <div class="dif">
+        <div class="item">
+          <h3>Método nascido dentro de uma indústria</h3>
+          <p>O sistema foi construído e lapidado no dia a dia real de uma indústria B2B que vende sob encomenda — não em sala de reunião de agência.</p>
+        </div>
+        <div class="item">
+          <h3>Vendemos o funil andando, não a ferramenta</h3>
+          <p>Consultoria tradicional entrega o CRM configurado e vai embora. Nós ficamos operando: cada lead analisado, cada atividade escrita, todos os dias.</p>
+        </div>
+        <div class="item">
+          <h3>Seu vendedor não precisa virar expert</h3>
+          <p>A inteligência artificial escreve a atividade do dia de cada vendedor: o que fazer, com quem e por quê. Ele executa — o sistema pensa.</p>
+        </div>
+        <div class="item">
+          <h3>As ferramentas ficam no seu nome</h3>
+          <p>CRM e licenças são contratados por você, direto com o fornecedor. Os dados são seus — sempre.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final" id="diagnostico">
+    <div class="container">
+      <h2>Quanto custa um orçamento sem resposta?</h2>
+      <p>Peça o diagnóstico gratuito: testamos seu atendimento, medimos os furos e mostramos a conta — em 5 dias úteis, sem compromisso.</p>
+      <a class="btn" href="https://diagnostico.pipecerto.com.br">Quero o diagnóstico gratuito</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <a class="logo" href="#topo" aria-label="PipeCerto">
+      <svg width="44" height="22" viewBox="0 0 160 60" aria-hidden="true">
+        <circle cx="12" cy="46" r="6" fill="#3A6B9E"></circle>
+        <circle cx="42" cy="40" r="8" fill="#D97706"></circle>
+        <circle cx="78" cy="32" r="11" fill="#C2321D"></circle>
+        <circle cx="126" cy="22" r="16" fill="#1E8E5A"></circle>
+        <polyline points="117 22 124 29 136 15" fill="none" stroke="#FBF7F1" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+      </svg>
+      <span style="font-size:17px">PipeCerto</span>
+    </a>
+    <p>contato@pipecerto.com.br · pipecerto.com.br</p>
+  </div>
+</footer>
+
+</body>
+</html>
