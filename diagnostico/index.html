@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedir diagnóstico | PipeCerto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4F6; --surface:#FFFFFF; --ink:#1F2A33; --ink-2:#5B6B77; --line:#DDE4E9;
+  --frio:#7D93A6; --morno:#D9A13B; --quente:#D96B2B; --verde:#1F8A5D; --verde-escuro:#176F4A;
+  --raio:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:'Ubuntu',system-ui,sans-serif;background:var(--bg);color:var(--ink);display:flex;flex-direction:column}
+
+/* Cabeçalho */
+header{background:var(--surface);border-bottom:1px solid var(--line)}
+.head-row{max-width:760px;margin:0 auto;padding:14px 16px 10px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.dots{display:flex;align-items:center;gap:4px;flex:none}
+.dots i{width:9px;height:9px;border-radius:50%;display:block}
+.dots i:nth-child(1){background:var(--frio)}
+.dots i:nth-child(2){background:var(--morno)}
+.dots i:nth-child(3){background:var(--quente)}
+.dots .check{width:13px;height:13px;border-radius:50%;background:var(--verde);position:relative}
+.dots .check::after{content:"";position:absolute;left:3.5px;top:3px;width:4px;height:6.5px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+.brand-txt{min-width:0}
+.brand-txt b{font-weight:700;font-size:17px;letter-spacing:.1px;display:block;line-height:1.1}
+.brand-txt span{font-size:12.5px;color:var(--ink-2);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.step-ind{font-size:13px;color:var(--ink-2);flex:none}
+.step-ind b{color:var(--verde);font-weight:700}
+.bar{height:3px;background:var(--line)}
+.bar i{display:block;height:100%;width:0;background:var(--verde);transition:width .35s ease}
+.trust{background:var(--surface);border-bottom:1px solid var(--line)}
+.trust-row{max-width:760px;margin:0 auto;padding:8px 16px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.trust-row::-webkit-scrollbar{display:none}
+.pill{flex:none;font-size:12px;color:var(--ink-2);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+.pill.ok{color:var(--verde-escuro);border-color:#BFE0D1;background:#EDF7F2;font-weight:500}
+
+/* Conversa */
+main{flex:1;overflow-y:auto}
+.chat{max-width:680px;margin:0 auto;padding:22px 16px 28px;display:flex;flex-direction:column;gap:10px}
+.row{display:flex;gap:10px;align-items:flex-end}
+.row.user{justify-content:flex-end}
+.avatar{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+.bubble{max-width:82%;padding:11px 14px;border-radius:var(--raio);font-size:15.5px;line-height:1.5;animation:pop .22s ease}
+.bot .bubble{background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:5px}
+.user .bubble{background:var(--ink);color:#fff;border-bottom-right-radius:5px}
+.bubble b{font-weight:700}
+@keyframes pop{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.bubble{animation:none}.bar i{transition:none}}
+.typing{display:inline-flex;gap:4px;padding:14px}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--frio);animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.18s}.typing i:nth-child(3){animation-delay:.36s}
+@keyframes blink{0%,60%,100%{opacity:.3}30%{opacity:1}}
+
+/* Entrada */
+.dock{background:var(--surface);border-top:1px solid var(--line);padding:12px 16px calc(14px + env(safe-area-inset-bottom))}
+.dock-in{max-width:680px;margin:0 auto}
+.field-label{font-size:12.5px;color:var(--ink-2);margin:0 2px 6px}
+.input-row{display:flex;gap:8px;align-items:stretch}
+.ddi{flex:none;display:flex;align-items:center;gap:6px;border:1.5px solid var(--line);border-radius:12px;padding:0 12px;font-size:15px;font-weight:500;color:var(--ink-2);background:var(--bg)}
+.wa{width:17px;height:17px;flex:none}
+input[type=text],input[type=tel]{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;font:inherit;font-size:16px;color:var(--ink);background:var(--surface)}
+input:focus{outline:none;border-color:var(--verde)}
+.send{flex:none;width:50px;border:none;border-radius:12px;background:var(--verde);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.send:hover{background:var(--verde-escuro)}
+.send:disabled{background:var(--line);cursor:default}
+.send svg{width:20px;height:20px}
+.choices{display:flex;flex-wrap:wrap;gap:8px}
+.choice{border:1.5px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 15px;font:inherit;font-size:15px;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.choice:hover,.choice:focus-visible{border-color:var(--verde);background:#EDF7F2;outline:none}
+.fine{max-width:680px;margin:8px auto 0;font-size:12px;color:var(--ink-2);text-align:center}
+.fine a{color:var(--ink-2)}
+:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-row">
+    <div class="brand">
+      <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i class="check"></i></div>
+      <div class="brand-txt">
+        <b>PipeCerto</b>
+        <span>Pedir diagnóstico · leva menos de 2 minutos</span>
+      </div>
+    </div>
+    <div class="step-ind" id="stepInd">Passo <b>1</b> de 6</div>
+  </div>
+  <div class="bar"><i id="barFill"></i></div>
+</header>
+
+<div class="trust">
+  <div class="trust-row">
+    <span class="pill ok">Diagnóstico sem custo</span>
+    <span class="pill">Resposta em até 1 dia útil</span>
+    <span class="pill">A conversa segue no seu WhatsApp</span>
+  </div>
+</div>
+
+<main><div class="chat" id="chat" aria-live="polite"></div></main>
+
+<div class="dock">
+  <div class="dock-in" id="dock"></div>
+  <p class="fine">Sem spam. Seus dados ficam com a PipeCerto. <a href="/privacidade" target="_blank" rel="noopener">Política de privacidade</a></p>
+</div>
+
+<script>
+/* ===== Configuração ===== */
+const WEBHOOK_URL = "";                      // endpoint que recebe o lead (vazio = modo demonstração)
+const EXPEDIENTE = { dias:[1,2,3,4,5], ini:8, fim:18 }; // seg a sex, 8h às 18h (horário de Brasília)
+
+/* ===== Estado ===== */
+const lead = { nome:"", whatsapp:"", empresa:"", atividade:"", comercial:"", dor:"", dor_outra:"",
+               status:"incompleto", ultima_pergunta:"", origem:location.href, iniciado_em:new Date().toISOString() };
+let passo = 0, nameTries = 0;
+const chat = document.getElementById('chat'), dock = document.getElementById('dock');
+
+function dentroDoExpediente(){
+  try{
+    const f = new Intl.DateTimeFormat('pt-BR',{timeZone:'America/Sao_Paulo',hour:'numeric',weekday:'short',hour12:false}).formatToParts(new Date());
+    const h = +f.find(p=>p.type==='hour').value;
+    const diaTxt = f.find(p=>p.type==='weekday').value.toLowerCase();
+    const mapa = {'dom':0,'seg':1,'ter':2,'qua':3,'qui':4,'sex':5,'sáb':6,'sab':6};
+    const d = mapa[diaTxt.slice(0,3)] ?? new Date().getDay();
+    return EXPEDIENTE.dias.includes(d) && h>=EXPEDIENTE.ini && h<EXPEDIENTE.fim;
+  }catch(e){ return true; }
+}
+
+/* ===== Fluxo ===== */
+const abertura = dentroDoExpediente()
+  ? "Oi! Eu sou o <b>Léo</b>, da PipeCerto. Vou anotar algumas informações do seu comercial para preparar um diagnóstico e continuar com você pelo WhatsApp."
+  : "Oi! Eu sou o <b>Léo</b>, da PipeCerto. Pode deixar suas informações por aqui que eu retomo com você pelo WhatsApp no próximo dia útil, a partir das 8h.";
+
+const passos = [
+  { id:"nome",      pergunta:"Para começar, qual é o seu nome?", tipo:"texto", rotulo:"Nome completo", placeholder:"Seu nome e sobrenome" },
+  { id:"whatsapp",  pergunta:()=>`Prazer, <b>${primeiroNome()}</b>! Qual é o seu WhatsApp? É por ele que continuamos a conversa.`, tipo:"tel", rotulo:"WhatsApp", placeholder:"(11) 99999-9999" },
+  { id:"empresa",   pergunta:"Qual é o nome da sua empresa?", tipo:"texto", rotulo:"Empresa", placeholder:"Nome da empresa" },
+  { id:"atividade", pergunta:()=>`O que a <b>${lead.empresa}</b> fabrica ou vende?`, tipo:"texto", rotulo:"Atividade", placeholder:"Ex.: esquadrias de alumínio sob medida" },
+  { id:"comercial", pergunta:"Hoje, quem cuida das vendas?", tipo:"botoes", opcoes:["Só eu","Eu e 1 ou 2 vendedores","Equipe com 3 ou mais"] },
+  { id:"dor",       pergunta:"Qual dessas situações mais parece com a sua?", tipo:"botoes", opcoes:["Orçamentos presos no WhatsApp","Leads sem follow-up","CRM que ninguém usa, ou não temos","Outra"] }
+];
+
+function primeiroNome(){ return (lead.nome||"").trim().split(/\s+/)[0] || ""; }
+
+/* ===== Interface ===== */
+function balaoBot(html, cb){
+  const t = document.createElement('div');
+  t.className='row bot';
+  t.innerHTML='<div class="avatar">L</div><div class="bubble typing"><i></i><i></i><i></i></div>';
+  chat.appendChild(t); rolar();
+  setTimeout(()=>{
+    t.innerHTML=`<div class="avatar">L</div><div class="bubble">${html}</div>`;
+    rolar(); if(cb) cb();
+  }, 650);
+}
+function balaoUser(txt){
+  const r=document.createElement('div');
+  r.className='row user';
+  const b=document.createElement('div'); b.className='bubble'; b.textContent=txt;
+  r.appendChild(b); chat.appendChild(r); rolar();
+}
+function rolar(){ document.querySelector('main').scrollTo({top:1e9,behavior:'smooth'}); }
+function progresso(){
+  document.getElementById('stepInd').innerHTML=`Passo <b>${Math.min(passo+1,6)}</b> de 6`;
+  document.getElementById('barFill').style.width=(passo/6*100)+'%';
+}
+
+function montarEntrada(p){
+  dock.innerHTML='';
+  if(p.tipo==='botoes'){
+    const wrap=document.createElement('div'); wrap.className='choices';
+    p.opcoes.forEach(op=>{
+      const b=document.createElement('button'); b.type='button'; b.className='choice'; b.textContent=op;
+      b.onclick=()=>responder(op); wrap.appendChild(b);
+    });
+    dock.appendChild(wrap); return;
+  }
+  const lab=document.createElement('p'); lab.className='field-label'; lab.textContent=p.rotulo; dock.appendChild(lab);
+  const row=document.createElement('div'); row.className='input-row';
+  if(p.tipo==='tel'){
+    const ddi=document.createElement('span'); ddi.className='ddi';
+    ddi.innerHTML='<svg class="wa" viewBox="0 0 24 24" fill="#1F8A5D"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.2 1.1-1.7 1.2-.4 0-.9.1-3-.6-2.6-1-4.2-3.6-4.3-3.8-.1-.2-1-1.4-1-2.6s.6-1.8.9-2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.8 2c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1Z"/></svg>+55';
+    row.appendChild(ddi);
+  }
+  const inp=document.createElement('input');
+  inp.type=p.tipo==='tel'?'tel':'text';
+  inp.placeholder=p.placeholder||''; inp.autocomplete=p.id==='nome'?'name':(p.tipo==='tel'?'tel':'off');
+  inp.setAttribute('aria-label',p.rotulo);
+  if(p.tipo==='tel') inp.addEventListener('input',()=>{ inp.value=mascaraTel(inp.value); });
+  const btn=document.createElement('button'); btn.className='send'; btn.type='button'; btn.setAttribute('aria-label','Enviar');
+  btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  function enviar(){ const v=inp.value.trim(); if(v) responder(v); }
+  btn.onclick=enviar;
+  inp.addEventListener('keydown',e=>{ if(e.key==='Enter') enviar(); });
+  row.appendChild(inp); row.appendChild(btn); dock.appendChild(row);
+  inp.focus();
+}
+
+function mascaraTel(v){
+  v=v.replace(/\D/g,'').slice(0,11);
+  if(v.length<=2) return v.length?('('+v):'';
+  if(v.length<=6) return `(${v.slice(0,2)}) ${v.slice(2)}`;
+  if(v.length<=10) return `(${v.slice(0,2)}) ${v.slice(2,6)}-${v.slice(6)}`;
+  return `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+}
+
+/* ===== Validação ===== */
+function validar(p, v){
+  if(p.id==='nome'){
+    const limpo=v.toLowerCase().replace(/[^a-zà-ú\s]/gi,'').trim();
+    const invalidos=['sim','ok','oi','ola','olá','nao','não'];
+    if(limpo.length<2 || invalidos.includes(limpo)){
+      nameTries++;
+      return nameTries<3 ? "Pode me dizer seu nome e sobrenome? É como vou te chamar na conversa." : null;
+    }
+  }
+  if(p.id==='whatsapp'){
+    const dig=v.replace(/\D/g,'');
+    if(dig.length<10||dig.length>11) return "Esse número parece incompleto. Pode conferir o DDD e o número?";
+  }
+  if(p.id==='empresa' && v.trim().length<2) return "Qual é o nome da empresa?";
+  return null;
+}
+
+/* ===== Motor ===== */
+function perguntar(){
+  progresso();
+  const p=passos[passo];
+  lead.ultima_pergunta=p.id;
+  salvarLocal();
+  const q=typeof p.pergunta==='function'?p.pergunta():p.pergunta;
+  dock.innerHTML='';
+  balaoBot(q,()=>montarEntrada(p));
+}
+
+function responder(valor){
+  const p=passos[passo];
+  const erro=validar(p,valor);
+  balaoUser(valor);
+  if(erro){ dock.innerHTML=''; balaoBot(erro,()=>montarEntrada(p)); return; }
+
+  if(p.id==='dor' && valor==='Outra'){
+    lead.dor='Outra'; dock.innerHTML='';
+    balaoBot('Me conta em uma frase qual é a situação.',()=>{
+      montarEntrada({id:'dor_outra',tipo:'texto',rotulo:'Situação',placeholder:'Descreva em poucas palavras'});
+    });
+    passos[passo]={id:'dor_outra',tipo:'texto'};
+    return;
+  }
+
+  if(p.id==='dor_outra'){ lead.dor_outra=valor; }
+  else { lead[p.id]=p.id==='whatsapp'?('+55 '+valor):valor; }
+
+  passo++;
+  if(passo<passos.length){ perguntar(); }
+  else { finalizar(); }
+}
+
+function finalizar(){
+  lead.status='completo'; lead.concluido_em=new Date().toISOString();
+  salvarLocal(); enviarLead();
+  progresso(); document.getElementById('barFill').style.width='100%';
+  document.getElementById('stepInd').innerHTML='<b>Concluído</b>';
+  dock.innerHTML='';
+  balaoBot(`Perfeito, <b>${primeiroNome()}</b>. Com isso já consigo preparar sua análise. Falamos com você pelo WhatsApp em até 1 dia útil.`);
+}
+
+function enviarLead(){
+  if(!WEBHOOK_URL){ console.log('[PipeCerto] Lead (modo demonstração):',lead); return; }
+  fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead)}).catch(()=>{});
+}
+
+/* Retoma do ponto se a página recarregar (nunca do zero) */
+function salvarLocal(){ try{ localStorage.setItem('pipecerto_lead',JSON.stringify({lead,passo})); }catch(e){} }
+function restaurar(){
+  try{
+    const s=JSON.parse(localStorage.getItem('pipecerto_lead')||'null');
+    if(s && s.passo>0 && s.passo<passos.length && s.lead && s.lead.status!=='completo'){
+      Object.assign(lead,s.lead); passo=s.passo;
+      balaoBot(abertura,()=>balaoBot(`Que bom te ver de novo${lead.nome?', <b>'+primeiroNome()+'</b>':''}! Vamos continuar de onde paramos.`,perguntar));
+      return true;
+    }
+  }catch(e){}
+  return false;
+}
+
+/* ===== Início ===== */
+if(!restaurar()){
+  balaoBot(abertura, perguntar);
+}
+</script>
+</body>
+</html>
