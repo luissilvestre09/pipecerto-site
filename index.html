@@ -75,7 +75,7 @@ header{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:bl
 .btn-sec:hover{color:var(--texto) !important}
 
 /* Hero */
-.hero{padding:72px 0 88px}
+.hero{padding:56px 0 64px}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
 .kicker{display:block;font-size:13.5px;font-weight:700;letter-spacing:1.5px;color:var(--verde-escuro);margin-bottom:18px;text-transform:uppercase}
 .hero h1{font-size:clamp(32px,4.6vw,52px);font-weight:700;line-height:1.1;letter-spacing:-1.2px}
@@ -96,13 +96,13 @@ nav.anchors a{color:var(--suave);text-decoration:none}
 nav.anchors a:hover{color:var(--texto)}
 
 /* Seções */
-.section{padding:104px 0}
+.section{padding:76px 0}
 .section h2{font-size:clamp(28px,3.8vw,40px);font-weight:700;letter-spacing:-.8px;line-height:1.15;margin-bottom:14px}
-.section p.lead{font-size:18px;color:var(--suave);max-width:640px;margin-bottom:64px}
-.hairline{border:none;border-top:1px solid var(--linha);margin:0}
+.section p.lead{font-size:18px;color:var(--suave);max-width:640px;margin-bottom:40px}
+.section.alt{background:#F2F7F4}
 
 /* Jornada */
-.jornada{background:var(--carvao);color:#F5F1EA;padding:88px 0}
+.jornada{background:var(--carvao);color:#F5F1EA;padding:64px 0}
 .jornada-inner{display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:space-between}
 .jornada h2{font-size:clamp(26px,3.6vw,38px);font-weight:700;line-height:1.2;letter-spacing:-.6px;max-width:420px}
 .etapas{display:flex;align-items:flex-end;gap:28px;flex-wrap:wrap}
@@ -147,8 +147,8 @@ nav.anchors a:hover{color:var(--texto)}
 
 /* FAQ */
 .faq{max-width:780px}
-.faq details{border-bottom:1px solid var(--linha)}
-.faq details:first-of-type{border-top:1px solid var(--linha)}
+.faq details{border-bottom:1px solid #DCE9E1}
+.faq details:first-of-type{border-top:1px solid #DCE9E1}
 .faq summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:24px 2px;font-size:18px;font-weight:500}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary .mais{flex:none;font-size:24px;font-weight:400;color:var(--suave);transition:transform .2s}
@@ -156,7 +156,7 @@ nav.anchors a:hover{color:var(--texto)}
 .faq .resposta{padding:0 2px 26px;font-size:16px;color:var(--suave);max-width:660px}
 
 /* CTA final */
-.cta-final{background:var(--carvao);color:#F5F1EA;text-align:center;padding:104px 0}
+.cta-final{background:var(--carvao);color:#F5F1EA;text-align:center;padding:80px 0}
 .cta-final h2{font-size:clamp(28px,3.8vw,40px);font-weight:700;letter-spacing:-.8px;margin-bottom:14px}
 .cta-final p{font-size:18px;color:#A79C8D;max-width:540px;margin:0 auto 36px}
 
@@ -175,9 +175,9 @@ footer{padding:40px 0}
   nav.anchors{display:none}
 }
 @media (max-width:640px){
-  .hero{padding:56px 0 56px}
-  .section{padding:72px 0}
-  .section p.lead{margin-bottom:44px}
+  .hero{padding:40px 0 48px}
+  .section{padding:56px 0}
+  .section p.lead{margin-bottom:32px}
   .jornada{padding:64px 0}
   .etapas{gap:16px}
   .etapa .seta{display:none}
@@ -264,9 +264,7 @@ footer{padding:40px 0}
     </div>
   </section>
 
-  <hr class="hairline">
-
-  <section class="section" id="como-funciona">
+  <section class="section alt" id="como-funciona">
     <div class="container">
       <h2>Como funciona</h2>
       <p class="lead">Três passos, sem projeto interminável: em semanas o sistema está operando. E segue operado todos os dias.</p>
@@ -341,8 +339,6 @@ footer{padding:40px 0}
     </div>
   </section>
 
-  <hr class="hairline">
-
   <section class="section" id="diferenciais">
     <div class="container">
       <h2>Por que a PipeCerto</h2>
@@ -368,9 +364,7 @@ footer{padding:40px 0}
     </div>
   </section>
 
-  <hr class="hairline">
-
-  <section class="section" id="perguntas">
+  <section class="section alt" id="perguntas">
     <div class="container">
       <h2>Perguntas frequentes</h2>
       <p class="lead">O que todo dono de indústria pergunta antes de pedir o diagnóstico.</p>
