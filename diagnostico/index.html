@@ -148,7 +148,7 @@ const passos = [
   { id:"empresa",   pergunta:"Qual é o nome da sua empresa?", tipo:"texto", rotulo:"Empresa", placeholder:"Nome da empresa" },
   { id:"atividade", pergunta:()=>`O que a <b>${lead.empresa}</b> fabrica ou vende?`, tipo:"texto", rotulo:"Atividade", placeholder:"Ex.: esquadrias de alumínio sob medida" },
   { id:"comercial", pergunta:"Hoje, quem cuida das vendas?", tipo:"botoes", opcoes:["Só eu","Eu e 1 ou 2 vendedores","Equipe com 3 ou mais"] },
-  { id:"dor",       pergunta:"Qual dessas situações mais parece com a sua?", tipo:"botoes", opcoes:["Orçamentos presos no WhatsApp","Leads sem follow-up","CRM que ninguém usa, ou não temos","Outra"] }
+  { id:"dor",       pergunta:"Qual dessas situações mais parece com a sua?", tipo:"botoes", opcoes:["Orçamentos presos no WhatsApp","Cliente some depois do orçamento","CRM que ninguém usa, ou não temos","Outra"] }
 ];
 
 function primeiroNome(){ return (lead.nome||"").trim().split(/\s+/)[0] || ""; }
