@@ -51,6 +51,7 @@ main{flex:1;overflow-y:auto}
 .bot .bubble{background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:5px}
 .user .bubble{background:var(--ink);color:#fff;border-bottom-right-radius:5px}
 .bubble b{font-weight:700}
+.bubble .aviso{display:block;margin-top:10px;background:#FFF6DF;border:1px solid #EFDCA6;border-radius:10px;padding:9px 12px;font-size:14px;line-height:1.45;color:#5a4a1f}
 @keyframes pop{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.bubble{animation:none}.bar i{transition:none}}
 .typing{display:inline-flex;gap:4px;padding:14px}
@@ -121,21 +122,25 @@ const lead = { nome:"", whatsapp:"", empresa:"", atividade:"", comercial:"", dor
 let passo = 0, nameTries = 0;
 const chat = document.getElementById('chat'), dock = document.getElementById('dock');
 
-function dentroDoExpediente(){
+function infoExpediente(){
   try{
     const f = new Intl.DateTimeFormat('pt-BR',{timeZone:'America/Sao_Paulo',hour:'numeric',weekday:'short',hour12:false}).formatToParts(new Date());
     const h = +f.find(p=>p.type==='hour').value;
     const diaTxt = f.find(p=>p.type==='weekday').value.toLowerCase();
     const mapa = {'dom':0,'seg':1,'ter':2,'qua':3,'qui':4,'sex':5,'sáb':6,'sab':6};
     const d = mapa[diaTxt.slice(0,3)] ?? new Date().getDay();
-    return EXPEDIENTE.dias.includes(d) && h>=EXPEDIENTE.ini && h<EXPEDIENTE.fim;
-  }catch(e){ return true; }
+    const dentro = EXPEDIENTE.dias.includes(d) && h>=EXPEDIENTE.ini && h<EXPEDIENTE.fim;
+    let quando = 'Amanhã';
+    if(d===6 || (d===5 && h>=EXPEDIENTE.fim)) quando = 'Na segunda-feira';
+    else if(EXPEDIENTE.dias.includes(d) && h<EXPEDIENTE.ini) quando = 'Hoje';
+    return {dentro, quando};
+  }catch(e){ return {dentro:true, quando:'Amanhã'}; }
 }
 
 /* ===== Fluxo ===== */
-const abertura = dentroDoExpediente()
-  ? "Oi! Eu sou o <b>Léo</b>, da PipeCerto. Vou anotar algumas informações do seu comercial para preparar um diagnóstico e continuar com você pelo WhatsApp."
-  : "Oi! Eu sou o <b>Léo</b>, da PipeCerto. Pode deixar suas informações por aqui que eu retomo com você pelo WhatsApp no próximo dia útil, a partir das 8h.";
+const _exp = infoExpediente();
+const abertura = "Oi! Eu sou o <b>Léo</b>, da PipeCerto. Vou anotar algumas informações do seu comercial para preparar um diagnóstico e continuar com você pelo WhatsApp."
+  + (_exp.dentro ? "" : '<span class="aviso">🌙 Agora estamos fora do expediente, mas pode deixar tudo por aqui. <b>'+_exp.quando+' a partir das 8h</b>, eu continuo com você.</span>');
 
 const passos = [
   { id:"nome",      pergunta:"Para começar, qual é o seu nome?", tipo:"texto", rotulo:"Nome completo", placeholder:"Seu nome e sobrenome" },

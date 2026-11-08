@@ -317,5 +317,17 @@ footer{padding:36px 0;border-top:1px solid var(--borda)}
   </div>
 </footer>
 
+
+<!-- Botão flutuante: diagnóstico -->
+<style>
+.fab-diag{position:fixed;right:20px;bottom:20px;z-index:90;display:flex;align-items:center;gap:9px;background:var(--cliente);color:#fff !important;font-family:'Ubuntu',sans-serif;font-weight:700;font-size:15px;text-decoration:none;border-radius:999px;padding:13px 20px;box-shadow:0 6px 24px rgba(33,29,25,.28);transition:transform .15s}
+.fab-diag:hover{transform:scale(1.04)}
+.fab-diag svg{flex:none}
+@media (max-width:480px){.fab-diag{right:16px;bottom:16px;padding:12px 17px;font-size:14px}}
+</style>
+<a class="fab-diag" href="https://diagnostico.pipecerto.com.br" aria-label="Pedir diagnóstico gratuito">
+  <svg width="20" height="20" viewBox="0 0 64 64" aria-hidden="true"><polyline points="16 33 27 44 48 19" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Pedir diagnóstico
+</a>
 </body>
 </html>
