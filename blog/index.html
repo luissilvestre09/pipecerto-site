@@ -80,11 +80,15 @@
 (function(){
   var campo = document.getElementById('busca');
   var aviso = document.getElementById('semres');
+  function normaliza(t){
+    return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  }
   campo.addEventListener('input', function(){
-    var termo = campo.value.trim().toLowerCase();
+    var palavras = normaliza(campo.value.trim()).split(/\s+/).filter(Boolean);
     var visiveis = 0;
     document.querySelectorAll('.post').forEach(function(card){
-      var ok = card.querySelector('h2').textContent.toLowerCase().indexOf(termo) !== -1;
+      var texto = normaliza(card.textContent);
+      var ok = palavras.every(function(p){ return texto.indexOf(p) !== -1; });
       card.style.display = ok ? '' : 'none';
       if (ok) visiveis++;
     });
