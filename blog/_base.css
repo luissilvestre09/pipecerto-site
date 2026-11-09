@@ -1,18 +1,19 @@
 :root{--carvao:#1E3328;--verde:#1E8E5A;--verde-escuro:#17724A;--texto:#222B26;--suave:#5C6B62;--linha:#E3EAE5;--tinta:#F2F7F4}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Ubuntu',system-ui,sans-serif;background:#fff;color:var(--texto);line-height:1.7;font-size:17px}
+body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:var(--texto);line-height:1.7;font-size:17px}
+h1,h2,h3,.logo span,.btn,.cta h3{font-family:'Baloo 2','Inter',system-ui,sans-serif}
 a{color:var(--verde-escuro)}
 .container{max-width:720px;margin:0 auto;padding:0 24px}
 header{border-bottom:1px solid var(--linha);background:#fff}
 .header-inner{max-width:1040px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--texto)}
 .logo span{font-size:19px;font-weight:700}
-.btn{display:inline-block;font-weight:700;font-size:15px;color:#fff !important;background:var(--verde-escuro);border-radius:10px;padding:11px 20px;text-decoration:none}
+.btn{display:inline-block;font-weight:600;font-size:15px;color:#fff !important;background:var(--verde-escuro);border-radius:10px;padding:11px 20px;text-decoration:none}
 .btn:hover{background:#115A3A}
 main{padding:52px 0 72px}
 .crumb{font-size:13.5px;color:var(--suave);margin-bottom:18px}
 .crumb a{color:var(--suave);text-decoration:none}
-h1{font-size:clamp(28px,4.4vw,40px);font-weight:700;letter-spacing:-.8px;line-height:1.15;margin-bottom:10px}
+h1{font-size:clamp(28px,4.4vw,40px);font-weight:700;letter-spacing:-.3px;line-height:1.18;margin-bottom:10px}
 .meta{font-size:14px;color:var(--suave);margin-bottom:28px}
 .resposta{background:var(--tinta);border:1px solid #DCE9E1;border-radius:12px;padding:18px 20px;margin-bottom:34px}
 .resposta p{font-size:16.5px}
@@ -21,15 +22,15 @@ p{margin:12px 0;color:#3d382f}
 ul,ol{padding-left:24px;margin:12px 0}
 li{margin:7px 0;color:#3d382f}
 strong{color:var(--texto)}
-.faq{margin-top:10px}
-.faq details{border-bottom:1px solid var(--linha)}
-.faq details:first-of-type{border-top:1px solid var(--linha)}
-.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 2px;font-size:17px;font-weight:500}
+.faq{margin-top:10px;display:flex;flex-direction:column;gap:10px}
+.faq details{background:#fff;border:1px solid var(--linha);border-radius:12px;padding:0 18px;transition:border-color .15s}
+.faq details:hover,.faq details[open]{border-color:#BFD8CA}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:16px 0;font-size:17px;font-weight:500}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary .mais{color:var(--suave);font-size:22px;font-weight:400}
-.faq .r{padding:0 2px 20px;color:var(--suave);font-size:16px}
-.cta{background:var(--carvao);border-radius:14px;color:#F5F1EA;text-align:center;padding:36px 28px;margin-top:44px}
+.faq .r{padding:0 0 18px;color:var(--suave);font-size:16px}
+.cta{background:var(--carvao);border-radius:14px;color:#EEF4F0;text-align:center;padding:36px 28px;margin-top:44px}
 .cta h3{font-size:22px;font-weight:700;letter-spacing:-.3px;margin-bottom:8px}
-.cta p{color:#A79C8D;font-size:15.5px;margin:0 0 20px}
+.cta p{color:#A9C0B2;font-size:15.5px;margin:0 0 20px}
 footer{border-top:1px solid var(--linha);padding:26px 0}
 footer p{font-size:13.5px;color:var(--suave)}
