@@ -1,4 +1,4 @@
-:root{--carvao:#1E3328;--verde:#1E8E5A;--verde-escuro:#17724A;--texto:#222B26;--suave:#6B6459;--linha:#ECE9E4;--tinta:#F2F7F4}
+:root{--carvao:#1E3328;--verde:#1E8E5A;--verde-escuro:#17724A;--texto:#222B26;--suave:#5C6B62;--linha:#E3EAE5;--tinta:#F2F7F4}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Ubuntu',system-ui,sans-serif;background:#fff;color:var(--texto);line-height:1.7;font-size:17px}
 a{color:var(--verde-escuro)}
