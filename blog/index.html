@@ -14,11 +14,20 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231E8E5A'/%3E%3Cpolyline points='18 33 28 43 46 21' fill='none' stroke='%23FFFFFF' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="_base.css">
 <style>
-.post{display:block;border:1px solid var(--linha);border-radius:14px;padding:24px 26px;margin:18px 0;text-decoration:none;transition:border-color .15s}
-.post:hover{border-color:#BFD8CA}
-.post h2{font-size:21px;font-weight:700;letter-spacing:-.3px;color:var(--texto);margin:0 0 8px}
-.post p{color:var(--suave);font-size:15.5px;margin:0}
-.post .pm{font-size:13px;color:var(--suave);display:block;margin-top:12px}
+.container{max-width:1040px}
+.busca{width:100%;max-width:560px;display:block;margin:6px 0 30px;padding:14px 18px;font:inherit;font-size:16px;color:var(--texto);background:#fff;border:1px solid var(--linha);border-radius:12px;outline:none;transition:border-color .15s}
+.busca:focus{border-color:#BFD8CA}
+.busca::placeholder{color:var(--suave)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.grid{grid-template-columns:1fr}}
+.post{display:flex;flex-direction:column;border:1px solid var(--linha);border-radius:14px;padding:24px;text-decoration:none;background:#fff;transition:border-color .15s,box-shadow .15s,transform .15s}
+.post:hover{border-color:#BFD8CA;box-shadow:0 8px 24px rgba(33,29,25,.08);transform:translateY(-2px)}
+.post .pm{font-size:13px;color:var(--suave);margin-bottom:10px}
+.post h2{font-size:19px;font-weight:700;letter-spacing:-.3px;line-height:1.35;color:var(--texto);margin:0 0 10px}
+.post p{color:var(--suave);font-size:15px;line-height:1.6;margin:0 0 18px}
+.post .ler{margin-top:auto;font-size:15px;font-weight:500;color:var(--verde-escuro)}
+.semres{display:none;color:var(--suave);font-size:16px;padding:12px 2px}
 </style>
 </head>
 <body>
@@ -37,27 +46,51 @@
   <h1>Blog da PipeCerto</h1>
   <p class="meta">Gestão comercial, na prática, para indústrias que vendem sob encomenda.</p>
 
-  <a class="post" href="cliente-sumiu-depois-do-orcamento/">
-    <h2>Cliente pediu orçamento e sumiu: o que fazer na indústria</h2>
-    <p>As três causas operacionais do sumiço e um passo a passo para recuperar propostas paradas sem queimar a relação.</p>
-    <span class="pm">8 de novembro de 2026 · 6 min</span>
-  </a>
+  <input class="busca" id="busca" type="search" placeholder="Busque por título..." aria-label="Buscar artigo por título">
+  <p class="semres" id="semres">Nenhum artigo encontrado com esse termo.</p>
 
-  <a class="post" href="organizar-orcamentos-whatsapp-industria/">
-    <h2>Como organizar os orçamentos que chegam pelo WhatsApp da indústria</h2>
-    <p>O método em seis passos para centralizar os pedidos, dar dono a cada proposta e parar de perder venda por esquecimento.</p>
-    <span class="pm">8 de novembro de 2026 · 7 min</span>
-  </a>
+  <div class="grid">
+    <a class="post" href="cliente-sumiu-depois-do-orcamento/">
+      <span class="pm">8 de novembro de 2026 · 6 min</span>
+      <h2>Cliente pediu orçamento e sumiu: o que fazer na indústria</h2>
+      <p>As três causas operacionais do sumiço e um passo a passo para recuperar propostas paradas sem queimar a relação.</p>
+      <span class="ler">Ler o artigo →</span>
+    </a>
 
-  <a class="post" href="comercial-que-depende-do-dono/">
-    <h2>Sua indústria só vende quando você fica em cima? Como organizar o comercial</h2>
-    <p>Quando a cobrança do dono é o único motor da venda, o problema é processo. O passo a passo para o comercial andar sem você em cima de cada proposta.</p>
-    <span class="pm">8 de novembro de 2026 · 7 min</span>
-  </a>
+    <a class="post" href="organizar-orcamentos-whatsapp-industria/">
+      <span class="pm">8 de novembro de 2026 · 7 min</span>
+      <h2>Como organizar os orçamentos que chegam pelo WhatsApp da indústria</h2>
+      <p>O método em seis passos para centralizar os pedidos, dar dono a cada proposta e parar de perder venda por esquecimento.</p>
+      <span class="ler">Ler o artigo →</span>
+    </a>
+
+    <a class="post" href="comercial-que-depende-do-dono/">
+      <span class="pm">8 de novembro de 2026 · 7 min</span>
+      <h2>Sua indústria só vende quando você fica em cima? Como organizar o comercial</h2>
+      <p>Quando a cobrança do dono é o único motor da venda, o problema é processo. O passo a passo para o comercial andar sem você em cima de cada proposta.</p>
+      <span class="ler">Ler o artigo →</span>
+    </a>
+  </div>
 </div>
 </main>
 <footer>
   <div class="container"><p>© 2026 PipeCerto · <a href="https://pipecerto.com.br/">pipecerto.com.br</a> · <a href="https://pipecerto.com.br/privacidade/">Política de Privacidade</a></p></div>
 </footer>
+<script>
+(function(){
+  var campo = document.getElementById('busca');
+  var aviso = document.getElementById('semres');
+  campo.addEventListener('input', function(){
+    var termo = campo.value.trim().toLowerCase();
+    var visiveis = 0;
+    document.querySelectorAll('.post').forEach(function(card){
+      var ok = card.querySelector('h2').textContent.toLowerCase().indexOf(termo) !== -1;
+      card.style.display = ok ? '' : 'none';
+      if (ok) visiveis++;
+    });
+    aviso.style.display = visiveis ? 'none' : 'block';
+  });
+})();
+</script>
 </body>
 </html>
