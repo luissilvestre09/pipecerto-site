@@ -94,7 +94,7 @@ input:focus{outline:none;border-color:var(--verde)}
         <span>Pedir diagnóstico · leva menos de 2 minutos</span>
       </div>
     </div>
-    <div class="step-ind" id="stepInd">Passo <b>1</b> de 6</div>
+    <div class="step-ind" id="stepInd">Passo <b>1</b> de 7</div>
   </div>
   <div class="bar"><i id="barFill"></i></div>
 </header>
@@ -120,7 +120,7 @@ const WEBHOOK_URL = "";                      // endpoint que recebe o lead (vazi
 const EXPEDIENTE = { dias:[1,2,3,4,5], ini:8, fim:18 }; // seg a sex, 8h às 18h (horário de Brasília)
 
 /* ===== Estado ===== */
-const lead = { nome:"", whatsapp:"", empresa:"", atividade:"", comercial:"", dor:"", dor_outra:"",
+const lead = { nome:"", whatsapp:"", empresa:"", atividade:"", comercial:"", sistema:"", sistema_qual:"", dor:"", dor_outra:"",
                status:"incompleto", ultima_pergunta:"", origem:location.href, iniciado_em:new Date().toISOString() };
 let passo = 0, nameTries = 0;
 const chat = document.getElementById('chat'), dock = document.getElementById('dock');
@@ -151,6 +151,7 @@ const passos = [
   { id:"empresa",   pergunta:"Qual é o nome da sua empresa?", tipo:"texto", rotulo:"Empresa", placeholder:"Nome da empresa" },
   { id:"atividade", pergunta:()=>`O que a <b>${lead.empresa}</b> fabrica ou vende?`, tipo:"texto", rotulo:"Atividade", placeholder:"Ex.: esquadrias de alumínio sob medida" },
   { id:"comercial", pergunta:"Hoje, quem cuida das vendas?", tipo:"botoes", opcoes:["Só eu","Eu e 1 ou 2 vendedores","Equipe com 3 ou mais"] },
+  { id:"sistema",   pergunta:"Hoje vocês usam algum sistema para controlar os orçamentos e os clientes?", tipo:"botoes", opcoes:["Não, fica no WhatsApp e na planilha","Sim, o Pipedrive","Temos um sistema, mas quase ninguém usa","Sim, outro sistema, e usamos bem"] },
   { id:"dor",       pergunta:"Qual dessas situações mais parece com a sua?", tipo:"botoes", opcoes:["Orçamentos presos no WhatsApp","Cliente some depois do orçamento","CRM que ninguém usa, ou não temos","Outra"] }
 ];
 
@@ -175,8 +176,8 @@ function balaoUser(txt){
 }
 function rolar(){ document.querySelector('main').scrollTo({top:1e9,behavior:'smooth'}); }
 function progresso(){
-  document.getElementById('stepInd').innerHTML=`Passo <b>${Math.min(passo+1,6)}</b> de 6`;
-  document.getElementById('barFill').style.width=(passo/6*100)+'%';
+  document.getElementById('stepInd').innerHTML=`Passo <b>${Math.min(passo+1,7)}</b> de 7`;
+  document.getElementById('barFill').style.width=(passo/7*100)+'%';
 }
 
 function montarEntrada(p){
@@ -252,6 +253,15 @@ function responder(valor){
   const erro=validar(p,valor);
   balaoUser(valor);
   if(erro){ dock.innerHTML=''; balaoBot(erro,()=>montarEntrada(p)); return; }
+
+  if(p.id==='sistema' && (valor.startsWith('Temos um sistema') || valor.startsWith('Sim, outro'))){
+    lead.sistema=valor; dock.innerHTML='';
+    balaoBot('Qual sistema?',()=>{
+      montarEntrada({id:'sistema_qual',tipo:'texto',rotulo:'Sistema',placeholder:'Nome do sistema'});
+    });
+    passos[passo]={id:'sistema_qual',tipo:'texto'};
+    return;
+  }
 
   if(p.id==='dor' && valor==='Outra'){
     lead.dor='Outra'; dock.innerHTML='';
