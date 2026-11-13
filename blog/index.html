@@ -18,13 +18,15 @@
 .busca{width:100%;max-width:560px;display:block;margin:6px 0 30px;padding:14px 18px;font:inherit;font-size:16px;color:var(--texto);background:#fff;border:1px solid var(--linha);border-radius:12px;outline:none;transition:border-color .15s}
 .busca:focus{border-color:#1FC28A}
 .busca::placeholder{color:var(--suave)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:620px){.grid{grid-template-columns:1fr}}
-.post{display:flex;flex-direction:column;border:1px solid var(--linha);border-radius:14px;padding:24px;text-decoration:none;background:#fff;transition:border-color .15s,box-shadow .15s,transform .15s}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+@media (max-width:700px){.grid{grid-template-columns:1fr}}
+.post{display:flex;flex-direction:column;border:1px solid var(--linha);border-radius:18px;padding:0 0 24px;overflow:hidden;text-decoration:none;background:#fff;transition:border-color .15s,box-shadow .15s,transform .15s}
 .post:hover{border-color:#1FC28A;box-shadow:0 8px 24px rgba(31,36,48,.08);transform:translateY(-2px)}
+.post .thumb{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;background:#E4F7EF;margin-bottom:20px}
+.post .thumb.vazio{display:flex;align-items:center;justify-content:center}
+.post .pm,.post h2,.post p,.post .ler{padding-left:24px;padding-right:24px}
 .post .pm{font-size:13px;color:var(--suave);margin-bottom:10px}
-.post h2{font-size:19px;font-weight:700;letter-spacing:-.3px;line-height:1.35;color:var(--texto);margin:0 0 10px}
+.post h2{font-size:21px;font-weight:700;letter-spacing:-.3px;line-height:1.35;color:var(--texto);margin:0 0 10px}
 .post p{color:var(--suave);font-size:15px;line-height:1.6;margin:0 0 18px}
 .post .ler{margin-top:auto;font-size:15px;font-weight:500;color:var(--verde-escuro)}
 .semres{display:none;color:var(--suave);font-size:16px;padding:12px 2px}
@@ -48,6 +50,7 @@
 
   <div class="grid">
     <a class="post" href="reativar-clientes-parados/">
+      <span class="thumb vazio" data-capa="reativar-clientes-parados"><svg width="64" height="64" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26.17" fill="none" stroke="#1F2430" stroke-width="2.53"/><path d="M13.31 38.76 A18.21 18.21 0 0 1 11.90 36.50" fill="none" stroke="#BCE5FF" stroke-width="10.03" stroke-linecap="round"/><path d="M10.06 24.93 A18.21 18.21 0 0 1 12.35 18.71" fill="none" stroke="#F9E779" stroke-width="10.03" stroke-linecap="round"/><path d="M21.26 11.09 A18.21 18.21 0 0 1 32.38 10.33" fill="none" stroke="#FB5A3C" stroke-width="10.03" stroke-linecap="round"/><path d="M42.24 16.66 A18.21 18.21 0 0 1 22.91 45.48" fill="none" stroke="#1FC28A" stroke-width="10.03" stroke-linecap="round"/></svg></span>
       <span class="pm">13 de novembro de 2026 · 7 min</span>
       <h2>Como reativar clientes parados: quem pediu orçamento e quem já comprou</h2>
       <p>Dois grupos, duas conversas: por onde começar, o que escrever para cada um e como medir o resultado da reativação.</p>
@@ -55,6 +58,7 @@
     </a>
 
     <a class="post" href="crm-baguncado-ninguem-usa/">
+      <span class="thumb vazio" data-capa="crm-baguncado-ninguem-usa"><svg width="64" height="64" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26.17" fill="none" stroke="#1F2430" stroke-width="2.53"/><path d="M13.31 38.76 A18.21 18.21 0 0 1 11.90 36.50" fill="none" stroke="#BCE5FF" stroke-width="10.03" stroke-linecap="round"/><path d="M10.06 24.93 A18.21 18.21 0 0 1 12.35 18.71" fill="none" stroke="#F9E779" stroke-width="10.03" stroke-linecap="round"/><path d="M21.26 11.09 A18.21 18.21 0 0 1 32.38 10.33" fill="none" stroke="#FB5A3C" stroke-width="10.03" stroke-linecap="round"/><path d="M42.24 16.66 A18.21 18.21 0 0 1 22.91 45.48" fill="none" stroke="#1FC28A" stroke-width="10.03" stroke-linecap="round"/></svg></span>
       <span class="pm">13 de novembro de 2026 · 7 min</span>
       <h2>Meu CRM virou bagunça e ninguém usa: como arrumar</h2>
       <p>Por que o sistema vira depósito e o passo a passo de uma semana para arrumar, sem trocar de ferramenta.</p>
@@ -62,6 +66,7 @@
     </a>
 
     <a class="post" href="cliente-sumiu-depois-do-orcamento/">
+      <img class="thumb" src="cliente-sumiu-depois-do-orcamento/cliente-pediu-orcamento-e-sumiu.webp" width="1200" height="630" alt="Dono de empresa olhando intrigado para o celular, com o orçamento lido e sem resposta" loading="lazy">
       <span class="pm">8 de novembro de 2026 · 6 min</span>
       <h2>Cliente pediu orçamento e sumiu: o que fazer</h2>
       <p>As três causas operacionais do sumiço e um passo a passo para recuperar propostas paradas sem queimar a relação.</p>
@@ -69,6 +74,7 @@
     </a>
 
     <a class="post" href="organizar-orcamentos-whatsapp-empresa/">
+      <img class="thumb" src="organizar-orcamentos-whatsapp-empresa/organizar-orcamentos-whatsapp.webp" width="1200" height="630" alt="Dono de empresa anotando em um caderno os pedidos que chegam em três celulares" loading="lazy">
       <span class="pm">8 de novembro de 2026 · 7 min</span>
       <h2>Como organizar os orçamentos que chegam pelo WhatsApp</h2>
       <p>O método em seis passos para centralizar os pedidos, dar dono a cada proposta e parar de perder venda por esquecimento.</p>
@@ -76,6 +82,7 @@
     </a>
 
     <a class="post" href="comercial-que-depende-do-dono/">
+      <span class="thumb vazio" data-capa="comercial-que-depende-do-dono"><svg width="64" height="64" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26.17" fill="none" stroke="#1F2430" stroke-width="2.53"/><path d="M13.31 38.76 A18.21 18.21 0 0 1 11.90 36.50" fill="none" stroke="#BCE5FF" stroke-width="10.03" stroke-linecap="round"/><path d="M10.06 24.93 A18.21 18.21 0 0 1 12.35 18.71" fill="none" stroke="#F9E779" stroke-width="10.03" stroke-linecap="round"/><path d="M21.26 11.09 A18.21 18.21 0 0 1 32.38 10.33" fill="none" stroke="#FB5A3C" stroke-width="10.03" stroke-linecap="round"/><path d="M42.24 16.66 A18.21 18.21 0 0 1 22.91 45.48" fill="none" stroke="#1FC28A" stroke-width="10.03" stroke-linecap="round"/></svg></span>
       <span class="pm">8 de novembro de 2026 · 7 min</span>
       <h2>Sua empresa só vende quando você fica em cima? Como organizar o comercial</h2>
       <p>Quando a cobrança do dono é o único motor da venda, o problema é processo. O passo a passo para o comercial andar sem você em cima de cada proposta.</p>
