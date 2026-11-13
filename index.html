@@ -46,7 +46,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="96x96" href="https://pipecerto.com.br/favicon.png">
 <link rel="shortcut icon" href="https://pipecerto.com.br/favicon.ico">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231E8E5A'/%3E%3Cpolyline points='18 33 28 43 46 21' fill='none' stroke='%23FFFFFF' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
 :root{
   --carvao:#1E3328;
@@ -70,8 +69,8 @@ a{color:var(--verde-escuro)}
 /* Header */
 header{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--linha);z-index:50}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--texto)}
-.logo span{font-size:20px;font-weight:700;letter-spacing:0}
+.logo{display:inline-flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:#17724A}
+.logo span{font-size:23px;line-height:1;font-weight:700;letter-spacing:0;color:#17724A}
 .btn{display:inline-block;font-weight:600;font-size:15.5px;color:#fff !important;background:var(--verde-escuro);border:none;border-radius:10px;padding:13px 24px;text-decoration:none;cursor:pointer;transition:background .15s}
 .btn:hover{background:#115A3A}
 .btn-sec{display:inline-block;font-weight:500;font-size:15.5px;color:var(--suave) !important;text-decoration:none}
@@ -118,20 +117,28 @@ nav.anchors a:hover{color:var(--texto)}
 .etapa .seta{color:#587163;font-size:20px;padding-bottom:20px}
 .etapa-nome{color:#A9C0B2}
 
+/* Ícones em chip */
+.chip{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;background:#E3F0E9;color:var(--verde-escuro)}
+.chip svg{display:block}
+.chip.frio{background:#E8EFF6;color:var(--frio)}
+.chip.morno{background:#F9EFDF;color:#B4600A}
+.chip.quente{background:#F7E8E5;color:var(--quente)}
+.chip.sm{width:40px;height:40px;flex:none;margin:0;border-radius:11px}
+
 /* Furos: lista aberta, sem caixas */
 .furos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:48px}
-.furo{border-top:2px solid var(--carvao);padding-top:22px}
-.furo .num{font-size:15px;font-weight:700;color:var(--suave);display:block;margin-bottom:10px}
 .furo h3{font-size:21px;font-weight:700;letter-spacing:-.3px;margin-bottom:10px}
 .furo p{font-size:16px;color:var(--suave)}
 .furo .custo{display:block;margin-top:16px;font-size:14.5px;font-weight:500;color:var(--texto)}
 
+/* Prova: números do levantamento */
+.prova-nums{display:flex;gap:28px 72px;flex-wrap:wrap;align-items:flex-start}
+.pnum .num-big{font-family:'Baloo 2','Inter',sans-serif;font-size:clamp(46px,6.4vw,68px);font-weight:700;color:var(--verde-escuro);line-height:1;letter-spacing:-1px}
+.pnum .num-lab{max-width:270px;color:var(--suave);font-size:15.5px;margin-top:10px}
+.fonte-nota{margin-top:34px;font-size:13.5px;color:var(--suave)}
+
 /* Como funciona: colunas abertas com o ponto da jornada */
 .passos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:48px}
-.passo .pdot{width:14px;height:14px;border-radius:50%;margin-bottom:18px}
-.passo.p1 .pdot{background:var(--frio)}
-.passo.p2 .pdot{background:var(--morno)}
-.passo.p3 .pdot{background:var(--verde)}
 .passo .ptag{font-size:13px;font-weight:500;color:var(--suave);display:block;margin-bottom:8px}
 .passo h3{font-size:21px;font-weight:700;letter-spacing:-.3px;margin-bottom:10px}
 .passo p{font-size:16px;color:var(--suave)}
@@ -145,14 +152,15 @@ nav.anchors a:hover{color:var(--texto)}
 
 /* Diferenciais */
 .dif{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px 56px}
+.dif .item{display:flex;gap:16px;align-items:flex-start}
 .dif h3{font-size:18.5px;font-weight:700;letter-spacing:-.2px;margin-bottom:8px}
 .dif p{font-size:15.5px;color:var(--suave)}
 
 /* FAQ */
 .faq{max-width:780px;display:flex;flex-direction:column;gap:12px}
-.faq details{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:0 22px;transition:border-color .15s,box-shadow .15s}
+.faq details{background:#F2F7F4;border:1px solid #DCE9E1;border-radius:14px;padding:0 22px;transition:border-color .15s,box-shadow .15s,background .15s}
 .faq details:hover,.faq details[open]{border-color:#BFD8CA}
-.faq details[open]{box-shadow:0 8px 24px rgba(30,51,40,.06)}
+.faq details[open]{background:#fff;box-shadow:0 8px 24px rgba(30,51,40,.06)}
 .faq summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 0;font-size:17.5px;font-weight:500}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary .mais{flex:none;font-size:24px;font-weight:400;color:var(--suave);transition:transform .2s}
@@ -176,8 +184,8 @@ footer{background:#fff;padding:56px 0 0}
 .foot-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
 .foot-grid a{text-decoration:none}
 .foot-grid a:hover{color:var(--texto)}
-.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px;color:var(--texto)}
-.foot-brand span{font-size:17px;font-weight:700}
+.foot-brand{display:inline-flex;flex-direction:column;align-items:center;gap:4px;margin-bottom:14px;color:#17724A}
+.foot-brand span{font-size:20px;line-height:1;font-weight:700;color:#17724A}
 .legal{border-top:1px solid var(--linha);padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .legal p,.legal a{font-size:13.5px;color:var(--suave)}
 @media (max-width:720px){.foot-grid{grid-template-columns:1fr;gap:28px}}
@@ -208,14 +216,8 @@ footer{background:#fff;padding:56px 0 0}
 <header>
   <div class="container header-inner">
     <a class="logo" href="#topo" aria-label="PipeCerto — início">
-      <svg width="54" height="26" viewBox="0 0 160 60" role="img" aria-label="Símbolo PipeCerto: a jornada do frio ao cliente">
-        <circle cx="12" cy="46" r="6" fill="#3A6B9E"></circle>
-        <circle cx="42" cy="40" r="8" fill="#D97706"></circle>
-        <circle cx="78" cy="32" r="11" fill="#C2321D"></circle>
-        <circle cx="126" cy="22" r="16" fill="#1E8E5A"></circle>
-        <polyline points="117 22 124 29 136 15" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-      </svg>
       <span>PipeCerto</span>
+      <svg width="46" height="12" viewBox="0 0 83 22" aria-hidden="true"><circle cx="4.5" cy="11" r="4.5" fill="#3A6B9E"/><circle cx="23.5" cy="11" r="6" fill="#D97706"/><circle cx="45.8" cy="11" r="7.8" fill="#C2321D"/><circle cx="72.1" cy="11" r="10" fill="#1E8E5A"/><polyline points="65.4 11.5 70.6 16.7 79.5 6.3" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
     <nav class="anchors" aria-label="Seções">
       <a href="#como-funciona">Como funciona</a>
@@ -234,7 +236,7 @@ footer{background:#fff;padding:56px 0 0}
         <div>
           <span class="kicker">Para indústrias que vendem sob encomenda</span>
           <h1>Transforme mais orçamentos em pedidos.</h1>
-          <p class="sub">Organizamos o atendimento e acompanhamos cada proposta até a decisão: implantamos o processo e o CRM e operamos a rotina comercial com a sua equipe. Cada orçamento com dono, próximo passo e prazo.</p>
+          <p class="sub">Organizamos o atendimento e acompanhamos cada proposta até a decisão. Implantamos o processo e o CRM e operamos a rotina comercial com a sua equipe: cada orçamento com dono, próximo passo e prazo.</p>
           <div class="hero-ctas">
             <a class="btn" href="https://diagnostico.pipecerto.com.br">Quero analisar meu atendimento</a>
             <a class="btn-sec" href="#como-funciona">Como funciona</a>
@@ -255,30 +257,52 @@ footer{background:#fff;padding:56px 0 0}
     </div>
   </section>
 
-  <section class="section" id="furos">
+  <section class="section alt" id="furos">
     <div class="container">
       <h2>Os três furos que drenam as vendas da indústria</h2>
       <p class="lead">Quem investe para atrair o cliente e falha no atendimento paga duas vezes. São quase sempre os mesmos três pontos:</p>
       <div class="furos">
         <div class="furo">
-          <span class="num">01</span>
+          <span class="chip quente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg></span>
           <h3>Demora na primeira resposta</h3>
           <p>Seu cliente pede orçamento em três concorrentes e fecha com quem responde primeiro. Horas de silêncio entregam a venda para o outro.</p>
           <span class="custo">Custo: a venda vai para quem respondeu antes.</span>
         </div>
         <div class="furo">
-          <span class="num">02</span>
+          <span class="chip morno"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8" r="3.2"/><path d="M3 20c0-3 2.4-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.6"/><path d="M16 15.2c2.9.2 5 2 5 4.8"/></svg></span>
           <h3>Curioso e comprador na mesma fila</h3>
           <p>O vendedor atende todo mundo igual, e o comprador com pedido na mão espera atrás do curioso.</p>
           <span class="custo">Custo: energia no contato errado, pressa no cliente certo.</span>
         </div>
         <div class="furo">
-          <span class="num">03</span>
+          <span class="chip frio"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10 14"/><path d="M21 3 14 21l-4-7-7-4z"/></svg></span>
           <h3>Proposta sem follow-up</h3>
           <p>O orçamento é enviado e a conversa esfria. Ninguém retoma no momento certo, e "vou analisar" vira silêncio definitivo.</p>
           <span class="custo">Custo: propostas boas morrendo na gaveta do cliente.</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section" id="levantamento">
+    <div class="container">
+      <h2>Nós medimos o tamanho do problema</h2>
+      <p class="lead">Antes de desenhar o sistema, analisamos como a indústria que vende sob encomenda atende quem pede orçamento.</p>
+      <div class="prova-nums">
+        <div class="pnum">
+          <span class="num-big">200</span>
+          <p class="num-lab">indústrias sob encomenda analisadas, uma a uma</p>
+        </div>
+        <div class="pnum">
+          <span class="num-big">94%</span>
+          <p class="num-lab">operam sem nenhum processo de acompanhamento de orçamentos</p>
+        </div>
+        <div class="pnum">
+          <span class="num-big">2 em 3</span>
+          <p class="num-lab">recebem os pedidos direto no WhatsApp, sem triagem nem registro</p>
+        </div>
+      </div>
+      <p class="fonte-nota">Levantamento próprio PipeCerto · indústrias de SP, MG, Sul, GO e DF · outubro de 2026</p>
     </div>
   </section>
 
@@ -288,21 +312,21 @@ footer{background:#fff;padding:56px 0 0}
       <p class="lead">Três passos, sem projeto interminável: em semanas o sistema está operando. E segue operado todos os dias.</p>
       <div class="passos">
         <div class="passo p1">
-          <span class="pdot"></span>
+          <span class="chip frio"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.4-4.4"/></svg></span>
           <span class="ptag">Passo 1 · Gratuito</span>
           <h3>Diagnóstico</h3>
           <p>Testamos o atendimento comercial da sua empresa como se fôssemos um cliente e entregamos um relatório objetivo: nota, furos encontrados e o que eles custam por mês.</p>
           <p class="detalhe">5 dias úteis · sem compromisso</p>
         </div>
         <div class="passo p2">
-          <span class="pdot"></span>
+          <span class="chip morno"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h10"/><circle cx="17" cy="8" r="2.5"/><path d="M20 16H10"/><circle cx="7" cy="16" r="2.5"/></svg></span>
           <span class="ptag">Passo 2</span>
           <h3>Implantação</h3>
           <p>Desenhamos o processo de vendas, configuramos o CRM, criamos a triagem inteligente de quem chega e a régua de acompanhamento, e treinamos a equipe.</p>
           <p class="detalhe">30 a 45 dias</p>
         </div>
         <div class="passo p3">
-          <span class="pdot"></span>
+          <span class="chip"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><polyline points="20 3 20 7 16 7"/></svg></span>
           <span class="ptag">Passo 3 · Contínuo</span>
           <h3>Operação</h3>
           <p>A inteligência artificial analisa cada pedido de orçamento que entra, prepara a atividade do dia de cada vendedor com a mensagem sugerida e avisa quando um negócio está esfriando. O dono recebe relatório semanal.</p>
@@ -357,32 +381,44 @@ footer{background:#fff;padding:56px 0 0}
     </div>
   </section>
 
-  <section class="section" id="diferenciais">
+  <section class="section alt" id="diferenciais">
     <div class="container">
       <h2>Por que a PipeCerto</h2>
       <p class="lead">Não somos agência nem revenda de software. Somos operação comercial.</p>
       <div class="dif">
         <div class="item">
-          <h3>Método nascido dentro de uma indústria</h3>
-          <p>O sistema foi construído e lapidado no dia a dia real de uma indústria B2B que vende sob encomenda, não em sala de reunião de agência.</p>
+          <span class="chip sm"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l6 3v-3l6 3V7h6v14z"/><path d="M4 7V4h4v3"/></svg></span>
+          <div>
+            <h3>Método nascido dentro de uma indústria</h3>
+            <p>O sistema foi construído e lapidado no dia a dia real de uma indústria B2B que vende sob encomenda, não em sala de reunião de agência.</p>
+          </div>
         </div>
         <div class="item">
-          <h3>Vendemos o funil andando, não a ferramenta</h3>
-          <p>Consultoria tradicional entrega o CRM configurado e vai embora. Nós ficamos operando: cada cliente analisado, cada atividade escrita, todos os dias.</p>
+          <span class="chip sm"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg></span>
+          <div>
+            <h3>Vendemos o funil andando, não a ferramenta</h3>
+            <p>Consultoria tradicional entrega o CRM configurado e vai embora. Nós ficamos operando: cada cliente analisado, cada atividade escrita, todos os dias.</p>
+          </div>
         </div>
         <div class="item">
-          <h3>Seu vendedor não precisa virar expert</h3>
-          <p>A inteligência artificial prepara o dia de cada vendedor: o que fazer, com quem, por quê e uma sugestão de mensagem. O vendedor ajusta ao jeito dele e conduz a conversa.</p>
+          <span class="chip sm"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="8" r="3.4"/><path d="M4 20c0-3.3 2.7-5.5 6-5.5 1.2 0 2.3.3 3.2.8"/><path d="m17.5 13.5.9 2 2 .9-2 .9-.9 2-.9-2-2-.9 2-.9z"/></svg></span>
+          <div>
+            <h3>Seu vendedor não precisa virar expert</h3>
+            <p>A inteligência artificial prepara o dia de cada vendedor: o que fazer, com quem, por quê e uma sugestão de mensagem. O vendedor ajusta ao jeito dele e conduz a conversa.</p>
+          </div>
         </div>
         <div class="item">
-          <h3>As ferramentas ficam no seu nome</h3>
-          <p>CRM e licenças são contratados por você, direto com o fornecedor. Os dados são seus, sempre.</p>
+          <span class="chip sm"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 7.9 7 9 4-1.1 7-4.6 7-9V6z"/><polyline points="9 12 11.2 14.2 15.5 9.5"/></svg></span>
+          <div>
+            <h3>As ferramentas ficam no seu nome</h3>
+            <p>CRM e licenças são contratados por você, direto com o fornecedor. Os dados são seus, sempre.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section alt" id="perguntas">
+  <section class="section" id="perguntas">
     <div class="container">
       <h2>Perguntas frequentes</h2>
       <p class="lead">O que todo dono de indústria pergunta antes de pedir o diagnóstico.</p>
@@ -435,8 +471,8 @@ footer{background:#fff;padding:56px 0 0}
     <div class="foot-grid">
       <div>
         <a class="foot-brand" href="#topo" aria-label="PipeCerto" style="text-decoration:none">
-          <svg width="44" height="22" viewBox="0 0 160 60" aria-hidden="true"><circle cx="12" cy="46" r="6" fill="#3A6B9E"/><circle cx="42" cy="40" r="8" fill="#D97706"/><circle cx="78" cy="32" r="11" fill="#C2321D"/><circle cx="126" cy="22" r="16" fill="#1E8E5A"/><polyline points="117 22 124 29 136 15" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span>PipeCerto</span>
+      <svg width="46" height="12" viewBox="0 0 83 22" aria-hidden="true"><circle cx="4.5" cy="11" r="4.5" fill="#3A6B9E"/><circle cx="23.5" cy="11" r="6" fill="#D97706"/><circle cx="45.8" cy="11" r="7.8" fill="#C2321D"/><circle cx="72.1" cy="11" r="10" fill="#1E8E5A"/><polyline points="65.4 11.5 70.6 16.7 79.5 6.3" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <p>Processo, CRM e acompanhamento comercial para indústrias que vendem sob encomenda.</p>
       </div>

@@ -6,8 +6,8 @@ a{color:var(--verde-escuro)}
 .container{max-width:720px;margin:0 auto;padding:0 24px}
 header{border-bottom:1px solid var(--linha);background:#fff}
 .header-inner{max-width:1040px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--texto)}
-.logo span{font-size:19px;font-weight:700}
+.logo{display:inline-flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:#17724A}
+.logo span{font-size:23px;line-height:1;font-weight:700;letter-spacing:0;color:#17724A}
 .btn{display:inline-block;font-weight:600;font-size:15px;color:#fff !important;background:var(--verde-escuro);border-radius:10px;padding:11px 20px;text-decoration:none}
 .btn:hover{background:#115A3A}
 main{padding:52px 0 72px}
