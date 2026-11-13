@@ -152,7 +152,7 @@ const passos = [
   { id:"atividade", pergunta:()=>`O que a <b>${lead.empresa}</b> fabrica ou vende?`, tipo:"texto", rotulo:"Atividade", placeholder:"Ex.: esquadrias de alumínio sob medida" },
   { id:"comercial", pergunta:"Hoje, quem cuida das vendas?", tipo:"botoes", opcoes:["Só eu","Eu e 1 ou 2 vendedores","Equipe com 3 ou mais"] },
   { id:"sistema",   pergunta:"Hoje vocês usam algum sistema para controlar os orçamentos e os clientes?", tipo:"botoes", opcoes:["Não, fica no WhatsApp e na planilha","Sim, o Pipedrive","Temos um sistema, mas quase ninguém usa","Sim, outro sistema, e usamos bem"] },
-  { id:"dor",       pergunta:"Qual dessas situações mais parece com a sua?", tipo:"botoes", opcoes:["Orçamentos presos no WhatsApp","Cliente some depois do orçamento","CRM que ninguém usa, ou não temos","Outra"] }
+  { id:"dor",       pergunta:"Qual dessas situações mais parece com a sua?", tipo:"botoes", opcoes:["Orçamentos presos no WhatsApp","Cliente some depois do orçamento","Não sei quantos orçamentos estão em aberto","Outra"] }
 ];
 
 function primeiroNome(){ return (lead.nome||"").trim().split(/\s+/)[0] || ""; }
