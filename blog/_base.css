@@ -35,3 +35,4 @@ footer{border-top:1px solid var(--linha);padding:26px 0}
 footer p{font-size:13.5px;color:var(--suave)}
 .dado{background:#fff;border-left:4px solid var(--verde);border-radius:0 12px 12px 0;padding:16px 20px;margin:24px 0;font-size:16.5px}
 .autor{margin-top:40px;padding-top:20px;border-top:1px solid var(--linha);font-size:15px;color:var(--suave)}
+.capa{display:block;width:100%;height:auto;border-radius:16px;margin:0 0 28px}
