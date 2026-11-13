@@ -141,6 +141,10 @@ html{scroll-behavior:smooth}
 .faq summary:focus-visible{outline:3px solid #1FC28A;outline-offset:-3px}
 .faq[open]{box-shadow:inset 0 0 0 2px #1FC28A}
 
+.pq-seg{grid-template-columns:1.7fr 1fr}
+.pq-2col{grid-template-columns:1fr 1fr}
+.pq-div{border-left:1px solid #343B4D;padding-left:48px}
+@media (max-width:900px){.pq-seg{grid-template-columns:1fr;padding:28px 24px !important}.pq-2col{grid-template-columns:1fr}.pq-div{border-left:0;padding-left:0;border-top:1px solid #343B4D;padding-top:28px}}
 .topo{position:sticky;top:0;z-index:50}
 section[id]{scroll-margin-top:84px}
 .fab-diag{position:fixed;right:20px;bottom:20px;z-index:90;display:none;align-items:center;gap:9px;background:#1FC28A;color:#1F2430;font-family:Inter,sans-serif;font-weight:700;font-size:15px;text-decoration:none;border-radius:999px;padding:13px 20px;box-shadow:0 6px 24px rgba(31,36,48,.28)}
@@ -313,22 +317,50 @@ section[id]{scroll-margin-top:84px}
 </div>
 </section>
 
-<section id="para-quem" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
-<div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
-<h2 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.08; letter-spacing: -0.015em">Feito para quem vende por orçamento</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5060">Se a sua venda começa com um pedido de orçamento ou uma avaliação e passa por WhatsApp, proposta e negociação, a ferramenta foi desenhada para você. Ajudamos principalmente dois tipos de empresa:</p>
+<section id="para-quem" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 36px">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px 56px">
+<h2 style="flex:1 1 380px;margin:0;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(32px,3.6vw,46px);line-height:1.08;letter-spacing:-0.015em">Feito para quem vende por orçamento</h2>
+<p style="flex:1 1 420px;margin:0;font-size:18px;line-height:1.6;color:#4A5060">Se a sua venda começa com um pedido de orçamento ou uma avaliação e passa por WhatsApp, proposta e negociação, a ferramenta foi desenhada para você. Ajudamos principalmente dois tipos de empresa:</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
-<div style="background: #FFFFFF; border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 23px; line-height: 1.2">Sem nenhum CRM</h3><p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A5060">Os pedidos chegam pelo WhatsApp, a base vive em planilhas e na cabeça do vendedor, e ninguém sabe quantos orçamentos ficaram sem resposta.</p></div>
-<div style="background: #FFFFFF; border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 23px; line-height: 1.2">Com o CRM bagunçado</h3><p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A5060">O sistema existe, mas ninguém confia nele: contatos duplicados, etapas paradas e nenhuma rotina de acompanhamento.</p></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+<div style="background:#FFFFFF;border-radius:28px;overflow:hidden;display:flex;flex-direction:column">
+<div style="background:#E4F7EF;padding:18px 22px 10px"><svg viewBox="0 0 320 150" width="100%" role="img" aria-label="Pedidos soltos em conversas e planilha" style="display:block">
+<g transform="rotate(-6 80 50)"><rect x="24" y="26" width="118" height="44" rx="14" fill="#FFFFFF"/><rect x="38" y="40" width="70" height="7" rx="3.5" fill="#1F2430"/><rect x="38" y="53" width="44" height="7" rx="3.5" fill="#C9CDD6"/></g>
+<g transform="rotate(5 215 48)"><rect x="160" y="20" width="128" height="44" rx="14" fill="#FFFFFF"/><rect x="174" y="34" width="84" height="7" rx="3.5" fill="#1F2430"/><rect x="174" y="47" width="52" height="7" rx="3.5" fill="#C9CDD6"/></g>
+<g transform="rotate(3 100 108)"><rect x="46" y="86" width="108" height="44" rx="14" fill="#FFFFFF"/><rect x="60" y="100" width="62" height="7" rx="3.5" fill="#1F2430"/><rect x="60" y="113" width="40" height="7" rx="3.5" fill="#C9CDD6"/></g>
+<g transform="rotate(-4 232 106)"><rect x="182" y="80" width="104" height="54" rx="8" fill="#FFFFFF"/><path d="M182 98H286M182 116H286M216 80V134M251 80V134" stroke="#C9CDD6" stroke-width="2"/></g>
+<circle cx="166" cy="76" r="15" fill="#1F2430"/><text x="166" y="77" text-anchor="middle" dominant-baseline="central" style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:19px" fill="#FFF8EC">?</text>
+</svg></div>
+<div style="padding:24px 28px 30px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0B8A5E">Perfil 1</div>
+<h3 style="margin:0;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;line-height:1.15">Sem nenhum CRM</h3>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#4A5060">Os pedidos chegam pelo WhatsApp, a base vive em planilhas e na cabeça do vendedor, e ninguém sabe quantos orçamentos ficaram sem resposta.</p>
+</div></div>
+<div style="background:#FFFFFF;border-radius:28px;overflow:hidden;display:flex;flex-direction:column">
+<div style="background:#E4F7EF;padding:18px 22px 10px"><svg viewBox="0 0 320 150" width="100%" role="img" aria-label="Funil com etapas paradas e contatos duplicados" style="display:block">
+<rect x="22" y="16" width="84" height="118" rx="12" fill="#FFFFFF" opacity=".55"/><rect x="118" y="16" width="84" height="118" rx="12" fill="#FFFFFF" opacity=".55"/><rect x="214" y="16" width="84" height="118" rx="12" fill="#FFFFFF" opacity=".55"/>
+<rect x="32" y="26" width="40" height="6" rx="3" fill="#1F2430"/><rect x="128" y="26" width="34" height="6" rx="3" fill="#1F2430"/><rect x="224" y="26" width="44" height="6" rx="3" fill="#1F2430"/>
+<g transform="rotate(-5 64 58)"><rect x="30" y="44" width="68" height="26" rx="7" fill="#FFFFFF"/><rect x="38" y="54" width="36" height="6" rx="3" fill="#C9CDD6"/></g>
+<g transform="rotate(4 66 84)"><rect x="34" y="72" width="68" height="26" rx="7" fill="#FFFFFF"/><rect x="42" y="82" width="36" height="6" rx="3" fill="#C9CDD6"/></g>
+<g transform="rotate(-3 62 112)"><rect x="28" y="100" width="68" height="26" rx="7" fill="#FFFFFF"/><rect x="36" y="110" width="36" height="6" rx="3" fill="#C9CDD6"/></g>
+<g transform="rotate(6 160 62)"><rect x="126" y="48" width="68" height="26" rx="7" fill="#FFFFFF"/><rect x="134" y="58" width="30" height="6" rx="3" fill="#C9CDD6"/></g>
+<rect x="222" y="44" width="68" height="26" rx="7" fill="none" stroke="#1F2430" stroke-width="1.6" stroke-dasharray="5 5" opacity=".45"/>
+</svg></div>
+<div style="padding:24px 28px 30px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0B8A5E">Perfil 2</div>
+<h3 style="margin:0;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;line-height:1.15">Com o CRM bagunçado</h3>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#4A5060">O sistema existe, mas ninguém confia nele: contatos duplicados, etapas paradas e nenhuma rotina de acompanhamento.</p>
+</div></div>
 </div>
-<div style="display: flex; flex-direction: column; gap: 12px">
-<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #5C6270">Onde o método nasceu: indústria sob encomenda</div>
-<div style="display: flex; flex-wrap: wrap; gap: 12px"><div style="background: #FFFFFF; border: 1px solid #EDE3D3; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600">Estruturas metálicas, esquadrias e serralheria industrial</div><div style="background: #FFFFFF; border: 1px solid #EDE3D3; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600">Uniformes profissionais e confecção sob encomenda</div><div style="background: #FFFFFF; border: 1px solid #EDE3D3; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600">Embalagens personalizadas e material promocional</div><div style="background: #FFFFFF; border: 1px solid #EDE3D3; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600">Móveis corporativos, comunicação visual e equipamentos sob medida</div></div>
+<div class="pq-seg" style="background:#1F2430;border-radius:28px;padding:36px;display:grid;gap:32px 48px">
+<div style="display:flex;flex-direction:column;gap:18px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1FC28A">Onde o método nasceu: indústria sob encomenda</div>
+<ul class="pq-2col" style="list-style:none;margin:0;padding:0;display:grid;gap:14px 28px"><li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.45;font-weight:600;color:#FFF8EC"><span aria-hidden="true" style="flex:none;width:22px;height:22px;border-radius:11px;background:#1FC28A;display:flex;align-items:center;justify-content:center;margin-top:1px"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2.5 6.3 5 8.7 9.6 3.6" fill="none" stroke="#1F2430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Estruturas metálicas, esquadrias e serralheria industrial</span></li><li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.45;font-weight:600;color:#FFF8EC"><span aria-hidden="true" style="flex:none;width:22px;height:22px;border-radius:11px;background:#1FC28A;display:flex;align-items:center;justify-content:center;margin-top:1px"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2.5 6.3 5 8.7 9.6 3.6" fill="none" stroke="#1F2430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Uniformes profissionais e confecção sob encomenda</span></li><li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.45;font-weight:600;color:#FFF8EC"><span aria-hidden="true" style="flex:none;width:22px;height:22px;border-radius:11px;background:#1FC28A;display:flex;align-items:center;justify-content:center;margin-top:1px"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2.5 6.3 5 8.7 9.6 3.6" fill="none" stroke="#1F2430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Embalagens personalizadas e material promocional</span></li><li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.45;font-weight:600;color:#FFF8EC"><span aria-hidden="true" style="flex:none;width:22px;height:22px;border-radius:11px;background:#1FC28A;display:flex;align-items:center;justify-content:center;margin-top:1px"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2.5 6.3 5 8.7 9.6 3.6" fill="none" stroke="#1F2430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Móveis corporativos, comunicação visual e equipamentos sob medida</span></li></ul>
 </div>
-<div style="display: flex; flex-direction: column; gap: 12px">
-<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #5C6270">Onde ele também funciona</div>
-<div style="display: flex; flex-wrap: wrap; gap: 12px"><div style="background: #FFFFFF; border: 1px solid #EDE3D3; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600">Clínicas de estética e saúde</div><div style="background: #FFFFFF; border: 1px solid #EDE3D3; border-radius: 999px; padding: 14px 22px; font-size: 16px; font-weight: 600">Serviços sob medida, como eventos, reformas e projetos</div></div>
+<div class="pq-div" style="display:flex;flex-direction:column;gap:18px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1FC28A">Onde ele também funciona</div>
+<ul style="list-style:none;margin:0;padding:0;display:grid;gap:14px 28px"><li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.45;font-weight:600;color:#FFF8EC"><span aria-hidden="true" style="flex:none;width:22px;height:22px;border-radius:11px;background:#1FC28A;display:flex;align-items:center;justify-content:center;margin-top:1px"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2.5 6.3 5 8.7 9.6 3.6" fill="none" stroke="#1F2430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Clínicas de estética e saúde</span></li><li style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.45;font-weight:600;color:#FFF8EC"><span aria-hidden="true" style="flex:none;width:22px;height:22px;border-radius:11px;background:#1FC28A;display:flex;align-items:center;justify-content:center;margin-top:1px"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2.5 6.3 5 8.7 9.6 3.6" fill="none" stroke="#1F2430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Serviços sob medida, como eventos, reformas e projetos</span></li></ul>
+</div>
 </div>
 </section>
 
