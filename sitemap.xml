@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url><loc>https://pipecerto.com.br/</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://pipecerto.com.br/blog/</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://pipecerto.com.br/blog/cliente-sumiu-depois-do-orcamento/</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://pipecerto.com.br/blog/cliente-sumiu-depois-do-orcamento/</loc><image:image><image:loc>https://pipecerto.com.br/blog/cliente-sumiu-depois-do-orcamento/cliente-pediu-orcamento-e-sumiu.jpg</image:loc></image:image><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://pipecerto.com.br/blog/organizar-orcamentos-whatsapp-empresa/</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://pipecerto.com.br/blog/comercial-que-depende-do-dono/</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://pipecerto.com.br/blog/reativar-clientes-parados/</loc><lastmod>2026-11-13</lastmod></url>
