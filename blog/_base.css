@@ -76,3 +76,15 @@ footer p{font-size:13.5px;color:var(--suave)}
   .info ol.grade .n{left:14px;top:16px}
   .info .duas{grid-template-columns:1fr}
 }
+.bnav{display:flex;align-items:center;gap:24px;font-size:15px}
+.bnav .blink{color:var(--texto);text-decoration:none}
+.bnav .blink:hover{color:var(--verde-escuro)}
+.mnav{display:none;position:relative}
+.mnav summary{list-style:none;cursor:pointer;width:46px;height:46px;border-radius:14px;border:1.5px solid #1F2430;display:flex;align-items:center;justify-content:center;background:#FFF8EC}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav[open] summary{background:#1FC28A;border-color:#1FC28A}
+.mnav-painel{position:absolute;right:0;top:56px;z-index:60;min-width:236px;background:#fff;border:1px solid #EDE3D3;border-radius:18px;padding:10px;box-shadow:0 14px 40px rgba(31,36,48,.18)}
+.mnav-painel a{display:block;padding:13px 14px;border-radius:12px;font-family:'Inter',system-ui,sans-serif;font-size:16px;font-weight:600;color:#1F2430;text-decoration:none}
+.mnav-painel .mnav-cta{margin-top:6px;background:#1FC28A;text-align:center;font-weight:700;border-radius:999px}
+@media (max-width:860px){.bnav .blink{display:none}.mnav{display:block}.bnav{gap:12px}}
+@media (max-width:640px){.bnav .btn{display:none}}
