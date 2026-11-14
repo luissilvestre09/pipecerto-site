@@ -156,10 +156,21 @@ html{scroll-behavior:smooth}
 .topo{position:sticky;top:0;z-index:50}
 section[id]{scroll-margin-top:84px}
 .fab-diag{position:fixed;right:20px;bottom:20px;z-index:90;display:flex;align-items:center;gap:9px;background:#1FC28A;color:#1F2430;font-family:Inter,sans-serif;font-weight:700;font-size:15px;text-decoration:none;border-radius:999px;padding:13px 20px;box-shadow:0 6px 24px rgba(31,36,48,.28)}
+.mnav{display:none;position:relative}
+.mnav summary{list-style:none;cursor:pointer;width:46px;height:46px;border-radius:14px;border:1.5px solid #1F2430;display:flex;align-items:center;justify-content:center;background:#FFF8EC}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav[open] summary{background:#1FC28A;border-color:#1FC28A}
+.mnav-painel{position:absolute;right:0;top:56px;z-index:60;min-width:236px;background:#FFFFFF;border:1px solid #EDE3D3;border-radius:18px;padding:10px;box-shadow:0 14px 40px rgba(31,36,48,.18)}
+.mnav-painel a{display:block;padding:13px 14px;border-radius:12px;font-size:16px;font-weight:600;color:#1F2430;text-decoration:none}
+.mnav-painel a:active{background:#E4F7EF}
+.mnav-painel .mnav-cta{margin-top:6px;background:#1FC28A;text-align:center;font-weight:700;border-radius:999px}
 @media (max-width:860px){
   .menu .ancora{display:none}
+  .mnav{display:block}
+  .menu{gap:12px !important;flex-wrap:nowrap !important}
 }
 @media (max-width:640px){
+  .cta-topo{display:none}
   .fab-diag{right:16px;bottom:16px;padding:12px 17px;font-size:14px}
 }
 </style>
@@ -175,7 +186,18 @@ section[id]{scroll-margin-top:84px}
 <a class="ancora" href="#quem-somos" style="color: #1F2430; text-decoration: none">Quem somos</a>
 <a class="ancora" href="#perguntas" style="color: #1F2430; text-decoration: none">Perguntas</a>
 <a class="ancora" href="/blog/" style="color: #1F2430; text-decoration: none">Blog</a>
-<a href="https://diagnostico.pipecerto.com.br" style="background: #1FC28A; color: #1F2430; text-decoration: none; font-weight: 700; padding: 12px 20px; border-radius: 999px">Diagnóstico gratuito</a>
+<a class="cta-topo" href="https://diagnostico.pipecerto.com.br" style="background: #1FC28A; color: #1F2430; text-decoration: none; font-weight: 700; padding: 12px 20px; border-radius: 999px">Diagnóstico gratuito</a>
+<details class="mnav">
+<summary aria-label="Abrir o menu"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" fill="none" stroke="#1F2430" stroke-width="2.4" stroke-linecap="round"/></svg></summary>
+<div class="mnav-painel">
+<a href="#como-funciona">Como funciona</a>
+<a href="#para-quem">Para quem é</a>
+<a href="#quem-somos">Quem somos</a>
+<a href="#perguntas">Perguntas</a>
+<a href="/blog/">Blog</a>
+<a class="mnav-cta" href="https://diagnostico.pipecerto.com.br">Diagnóstico gratuito</a>
+</div>
+</details>
 </nav>
 </div>
 </header>
@@ -434,5 +456,6 @@ section[id]{scroll-margin-top:84px}
 
 </div>
 <a class="fab-diag" href="https://diagnostico.pipecerto.com.br" aria-label="Pedir diagnóstico gratuito"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true"><polyline points="16 33 27 44 48 19" fill="none" stroke="#1F2430" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>Pedir diagnóstico</a>
+<script>(function(){var m=document.querySelector(".mnav");if(!m)return;m.addEventListener("click",function(e){if(e.target.closest("a"))m.removeAttribute("open")});document.addEventListener("click",function(e){if(m.open&&!m.contains(e.target))m.removeAttribute("open")})})();</script>
 </body>
 </html>
