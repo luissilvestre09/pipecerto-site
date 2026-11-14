@@ -5,7 +5,7 @@ h1,h2,h3,.logo span,.btn,.cta h3{font-family:'Baloo 2','Inter',system-ui,sans-se
 a{color:var(--verde-escuro)}
 .container{max-width:720px;margin:0 auto;padding:0 24px}
 header{border-bottom:1px solid var(--linha);background:#FFF8EC}
-.header-inner{max-width:1040px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.header-inner{max-width:1200px;margin:0 auto;padding:14px 24px;min-height:79px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo{display:inline-flex;align-items:center;text-decoration:none}
 .btn{display:inline-block;font-family:'Inter',system-ui,sans-serif;font-weight:700;font-size:15px;color:#1F2430 !important;background:var(--verde);border-radius:999px;padding:12px 20px;text-decoration:none}
 .btn:hover{opacity:.88}
@@ -76,7 +76,7 @@ footer p{font-size:13.5px;color:var(--suave)}
   .info ol.grade .n{left:14px;top:16px}
   .info .duas{grid-template-columns:1fr}
 }
-.bnav{display:flex;align-items:center;gap:24px;font-size:15px}
+.bnav{display:flex;align-items:center;gap:28px;font-size:15px}
 .bnav .blink{color:var(--texto);text-decoration:none}
 .bnav .blink:hover{color:var(--verde-escuro)}
 .mnav{display:none;position:relative}
